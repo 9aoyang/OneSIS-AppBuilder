@@ -1,0 +1,58 @@
+{
+  "name": "onesis-appbuilder",
+  "private": true,
+  "version": "0.0.0",
+  "engines": {
+    "node": ">=14"
+  },
+  "lint-staged": {
+    "*.{js,ts,vue}": "eslint --fix",
+    "*.scss": "prettier --write"
+  },
+  "scripts": {
+    "docs": "pnpm --filter \"docs\" dev",
+    "build:docs": "pnpm --filter \"docs\" build",
+    "reinstall": "pnpm clean:all && pnpm i",
+    "prepare": "husky install",
+    "commit": "git-cz",
+    "changelog": "conventional-changelog -p angular -i CHANGELOG.md -s",
+    "clean:top": "rimraf */**/dist */**/types */dist coverage dwt*",
+    "clean:modules": "rimraf node_modules **/node_modules **/**/node_modules",
+    "clean:all": "pnpm clean:top && pnpm clean:modules",
+    "eslint": "eslint . --ext .js,.vue,.ts,.tsx",
+    "prettier": "prettier \"{playground,runtime}/**/*.{ts,tsx,js,jsx}\"",
+    "lint": "pnpm prettier --check && pnpm eslint",
+    "lint-fix": "pnpm prettier --write && pnpm eslint --fix",
+    "playground": "pnpm --filter \"runtime-vue3\" --filter \"tmagic-playground\" dev",
+    "pg": "pnpm playground",
+    "playground:vue2": "pnpm --filter \"runtime-vue2\" --filter \"tmagic-playground\" dev:vue2",
+    "pg:vue2": "pnpm playground:vue2",
+    "playground:react": "pnpm --filter \"runtime-react\" --filter \"tmagic-playground\" dev:react",
+    "pg:react": "pnpm playground:react",
+    "build:runtime:admin": "pnpm --filter \"runtime-*\" build:admin",
+    "build:playground": "pnpm --filter \"runtime-vue3\" build && pnpm --filter \"tmagic-playground\" build"
+  },
+  "dependencies": {
+    "vue": "^3.2.37"
+  },
+  "devDependencies": {
+    "@commitlint/cli": "^17.0.3",
+    "@commitlint/config-conventional": "^17.0.3",
+    "@typescript-eslint/parser": "^5.33.0",
+    "@vitejs/plugin-vue": "^3.0.3",
+    "commitizen": "^4.2.5",
+    "cz-conventional-changelog": "^3.3.0",
+    "eslint": "^7.32.0",
+    "eslint-config-prettier": "^8.5.0",
+    "eslint-plugin-prettier": "^4.2.1",
+    "eslint-plugin-simple-import-sort": "^7.0.0",
+    "eslint-plugin-vue": "^7.20.0",
+    "husky": "^8.0.1",
+    "lint-staged": "^13.0.3",
+    "prettier": "^2.7.1",
+    "rimraf": "^3.0.2",
+    "typescript": "^4.7.4",
+    "vite": "^3.0.7",
+    "vue-tsc": "^0.39.5"
+  }
+}

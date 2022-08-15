@@ -1,0 +1,49 @@
+{
+  "name": "runtime-vue3",
+  "version": "1.1.0-beta.9",
+  "private": true,
+  "scripts": {
+    "dev": "npm run build:libs && vite --config dev.vite.config.ts",
+    "build": "npm run build:libs && npm run build:page && npm run build:playground",
+    "build:admin": "npm run build:libs:admin && npm run build:page:admin && npm run build:playground:admin",
+    "build:page": "vite build --config build.vite.config.ts --mode page",
+    "build:playground": "vite build --config build.vite.config.ts --mode playground",
+    "build:page:admin": "vite build --config build.vite.config.ts --mode page:admin",
+    "build:playground:admin": "vite build --config build.vite.config.ts --mode playground:admin",
+    "build:libs": "tmagic entry && npm run build:config && npm run build:value && npm run build:event",
+    "build:libs:admin": "tmagic entry && npm run build:config:admin && npm run build:value:admin && npm run build:event:admin",
+    "build:config": "vite build --config build.vite.config.ts --mode config",
+    "build:value": "vite build --config build.vite.config.ts --mode value",
+    "build:event": "vite build --config build.vite.config.ts --mode event",
+    "build:config:admin": "vite build --config build.vite.config.ts --mode config:admin",
+    "build:value:admin": "vite build --config build.vite.config.ts --mode value:admin",
+    "build:event:admin": "vite build --config build.vite.config.ts --mode event:admin"
+  },
+  "dependencies": {
+    "@tmagic/cli": "1.1.0-beta.9",
+    "@tmagic/core": "1.1.0-beta.9",
+    "@tmagic/schema": "1.1.0-beta.9",
+    "@tmagic/stage": "1.1.0-beta.9",
+    "@tmagic/ui": "1.1.0-beta.9",
+    "@tmagic/utils": "1.1.0-beta.9",
+    "@vitejs/plugin-legacy": "^2.0.0",
+    "@vitejs/plugin-vue-jsx": "^1.3.10",
+    "axios": "^0.25.0",
+    "terser": "^5.14.2",
+    "vue": "^3.2.37",
+    "vue3-openlayers": "^0.1.70"
+  },
+  "devDependencies": {
+    "@types/node": "^15.12.4",
+    "@vitejs/plugin-vue": "^3.0.1",
+    "@vue/compiler-sfc": "^3.2.37",
+    "@vue/test-utils": "^2.0.0",
+    "recast": "^0.20.4",
+    "rollup": "^2.25.0",
+    "rollup-plugin-external-globals": "^0.6.1",
+    "sass": "^1.35.1",
+    "typescript": "^4.3.4",
+    "vite": "^3.0.4",
+    "vue-tsc": "^0.39.4"
+  }
+}
