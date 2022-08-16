@@ -104,23 +104,23 @@ importers:
       '@tmagic/stage': 1.1.0-beta.9
       '@tmagic/ui-react': 1.1.0-beta.9
       '@tmagic/utils': 1.1.0-beta.9
-      '@types/react': ^17.0.37
-      '@types/react-dom': ^17.0.11
-      '@vitejs/plugin-legacy': ^2.0.0
-      '@vitejs/plugin-react-refresh': ^1.3.1
+      '@types/react': ^17.0.48
+      '@types/react-dom': ^17.0.17
+      '@vitejs/plugin-legacy': ^2.0.1
+      '@vitejs/plugin-react-refresh': ^1.3.6
       axios: ^0.25.0
       react: ^17.0.2
       react-dom: ^17.0.2
-      recast: ^0.20.4
+      recast: ^0.20.5
       terser: ^5.14.2
       typescript: ^4.7.4
-      vite: ^3.0.4
+      vite: ^3.0.7
     dependencies:
       '@tmagic/cli': 1.1.0-beta.9
       '@tmagic/core': 1.1.0-beta.9
       '@tmagic/schema': 1.1.0-beta.9
       '@tmagic/stage': 1.1.0-beta.9
-      '@tmagic/ui-react': 1.1.0-beta.9
+      '@tmagic/ui-react': link:../../ui/react
       '@tmagic/utils': 1.1.0-beta.9
       axios: 0.25.0
       react: 17.0.2
@@ -226,6 +226,27 @@ importers:
       typescript: 4.7.4
       vite: 3.0.7_sass@1.54.4+terser@5.14.2
       vue-tsc: 0.39.5_typescript@4.7.4
+
+  ui/react:
+    specifiers:
+      '@tmagic/core': 1.1.0-beta.9
+      '@tmagic/schema': 1.1.0-beta.9
+      '@types/react': ^17.0.37
+      '@types/react-dom': ^17.0.11
+      qrcode: ^1.5.0
+      react: ^17.0.0
+      react-dom: ^17.0.0
+      typescript: ^4.7.4
+    dependencies:
+      '@tmagic/core': 1.1.0-beta.9
+      '@tmagic/schema': 1.1.0-beta.9
+      qrcode: 1.5.1
+      react: 17.0.2
+      react-dom: 17.0.2_react@17.0.2
+    devDependencies:
+      '@types/react': 17.0.48
+      '@types/react-dom': 17.0.17
+      typescript: 4.7.4
 
 packages:
 
@@ -1097,17 +1118,6 @@ packages:
       - '@vue/composition-api'
     dev: false
 
-  /@tmagic/ui-react/1.1.0-beta.9:
-    resolution: {integrity: sha512-j8pbnLh3XskxZcVuWUjDEh2YFnfOKBLBoZrIKRyNtDDGkpVvBtd0xda8WPa3yBUO+KtqC82rQ7D7w6K/sTgPLQ==}
-    engines: {node: '>=14'}
-    dependencies:
-      '@tmagic/core': 1.1.0-beta.9
-      '@tmagic/schema': 1.1.0-beta.9
-      qrcode: 1.5.1
-      react: 17.0.2
-      react-dom: 17.0.2_react@17.0.2
-    dev: false
-
   /@tmagic/ui-vue2/1.1.0-beta.9:
     resolution: {integrity: sha512-EtkPaC5068HNTQZI7JhZDJxhGYTLeT9c2Qng6BPHqxfqoyQqsPmL+sQzxdRmz56naJ+el/oklqd2MFXPK/KPoA==}
     engines: {node: '>=14'}
@@ -1173,7 +1183,7 @@ packages:
   /@types/fs-extra/9.0.13:
     resolution: {integrity: sha512-nEnwB++1u5lVDM2UI4c1+5R+FYaKfaAzS4OococimjVm3nQw3TuzH5UNsocrcTBbhnerblyHj4A49qXbIiZdpA==}
     dependencies:
-      '@types/node': 18.7.3
+      '@types/node': 18.7.5
     dev: false
 
   /@types/linkify-it/3.0.2:
@@ -1221,6 +1231,11 @@ packages:
 
   /@types/node/18.7.3:
     resolution: {integrity: sha512-LJgzOEwWuMTBxHzgBR/fhhBOWrvBjvO+zPteUgbbuQi80rYIZHrk1mNbRUqPZqSLP2H7Rwt1EFLL/tNLD1Xx/w==}
+    dev: true
+
+  /@types/node/18.7.5:
+    resolution: {integrity: sha512-NcKK6Ts+9LqdHJaW6HQmgr7dT/i3GOHG+pt6BiWv++5SnjtRd4NXeiuN2kA153SjhXPR/AhHIPHPbrsbpUVOww==}
+    dev: false
 
   /@types/normalize-package-data/2.4.1:
     resolution: {integrity: sha512-Gj7cI7z+98M282Tqmp2K5EIsoouUEzbBJhQQzDE3jSIRk6r9gsz0oUokqIUR4u1R3dMHo0pDHM7sNOHyhulypw==}
@@ -1879,7 +1894,7 @@ packages:
     hasBin: true
     dependencies:
       caniuse-lite: 1.0.30001376
-      electron-to-chromium: 1.4.219
+      electron-to-chromium: 1.4.221
       node-releases: 2.0.6
       update-browserslist-db: 1.0.5_browserslist@4.21.3
 
@@ -2149,8 +2164,8 @@ packages:
     engines: {node: '>=10'}
     hasBin: true
     dependencies:
-      is-text-path: 1.0.1
       JSONStream: 1.3.5
+      is-text-path: 1.0.1
       lodash: 4.17.21
       meow: 8.1.2
       split2: 3.2.2
@@ -2356,8 +2371,8 @@ packages:
     resolution: {integrity: sha512-I88TYZWc9XiYHRQ4/3c5rjjfgkjhLyW2luGIheGERbNQ6OY7yTybanSpDXZa8y7VUP9YmDcYa+eyq4ca7iLqWA==}
     dev: true
 
-  /electron-to-chromium/1.4.219:
-    resolution: {integrity: sha512-zoQJsXOUw0ZA0YxbjkmzBumAJRtr6je5JySuL/bAoFs0DuLiLJ+5FzRF7/ZayihxR2QcewlRZVm5QZdUhwjOgA==}
+  /electron-to-chromium/1.4.221:
+    resolution: {integrity: sha512-aWg2mYhpxZ6Q6Xvyk7B2ziBca4YqrCDlXzmcD7wuRs65pVEVkMT1u2ifdjpAQais2O2o0rW964ZWWWYRlAL/kw==}
 
   /element-plus/2.2.13_vue@3.2.37:
     resolution: {integrity: sha512-dKQ7BPZC8deUPhv+6s4GgOL0GyGj3KpUarywxm6s1nWnHjH6FqeZlUcxPqBvJd7W/d81POayx3B13GP+rfkG9g==}

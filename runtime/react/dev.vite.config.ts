@@ -8,14 +8,8 @@ export default defineConfig({
 
   resolve: {
     alias: [
-      {
-        find: /^react$/,
-        replacement: path.join(__dirname, 'node_modules/react/index.js'),
-      },
-      {
-        find: /^react-dom$/,
-        replacement: path.join(__dirname, 'node_modules/react-dom/index.js'),
-      },
+      { find: /^react$/, replacement: path.join(__dirname, 'node_modules/react/index.js') },
+      { find: /^react-dom$/, replacement: path.join(__dirname, 'node_modules/react-dom/index.js') },
     ],
   },
 
