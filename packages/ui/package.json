@@ -1,0 +1,31 @@
+{
+  "version": "1.1.0-beta.9",
+  "name": "@tmagic/ui",
+  "main": "src/index.ts",
+  "engines": {
+    "node": ">=14"
+  },
+  "license": "Apache-2.0",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/Tencent/tmagic-editor.git"
+  },
+  "dependencies": {
+    "@tmagic/core": "1.1.0-beta.9",
+    "@tmagic/schema": "1.1.0-beta.9",
+    "@tmagic/utils": "1.1.0-beta.9",
+    "delegate": "^3.2.0",
+    "qrcode": "^1.5.0",
+    "tiny-emitter": "^2.1.0",
+    "vue": "^3.2.37"
+  },
+  "peerDependencies": {
+    "vue": "^3.2.37"
+  },
+  "devDependencies": {
+    "@testing-library/vue": "^6.4.2",
+    "@types/qrcode": "^1.4.2",
+    "@vue/compiler-sfc": "^3.2.37",
+    "@vue/test-utils": "^2.0.0"
+  }
+}

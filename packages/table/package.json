@@ -1,0 +1,59 @@
+{
+  "version": "1.1.0-beta.9",
+  "name": "@tmagic/table",
+  "sideEffects": [
+    "dist/*"
+  ],
+  "main": "dist/tmagic-table.umd.js",
+  "module": "dist/tmagic-table.mjs",
+  "types": "types/index.d.ts",
+  "exports": {
+    ".": {
+      "import": "./dist/tmagic-table.mjs",
+      "require": "./dist/tmagic-table.umd.js"
+    },
+    "./dist/style.css": {
+      "import": "./dist/style.css",
+      "require": "./dist/style.css"
+    },
+    "./*": "./*"
+  },
+  "license": "Apache-2.0",
+  "scripts": {
+    "build": "npm run build:type && vite build",
+    "build:type": "npm run clear:type && vue-tsc --declaration --emitDeclarationOnly --project tsconfig.build.json",
+    "clear:type": "rimraf ./types"
+  },
+  "engines": {
+    "node": ">=14"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/Tencent/tmagic-editor.git"
+  },
+  "dependencies": {
+    "@tmagic/form": "1.1.0-beta.9",
+    "@tmagic/utils": "1.1.0-beta.9",
+    "element-plus": "^2.2.6",
+    "lodash-es": "^4.17.21",
+    "vue": "^3.2.37"
+  },
+  "peerDependencies": {
+    "@tmagic/form": "1.1.0-beta.9",
+    "element-plus": "^2.2.6",
+    "vue": "^3.2.37"
+  },
+  "devDependencies": {
+    "@types/color": "^3.0.1",
+    "@types/lodash-es": "^4.17.4",
+    "@types/node": "^15.12.4",
+    "@vitejs/plugin-vue": "^3.0.1",
+    "@vue/compiler-sfc": "^3.2.37",
+    "@vue/test-utils": "^2.0.0",
+    "rimraf": "^3.0.2",
+    "sass": "^1.35.1",
+    "typescript": "^4.7.4",
+    "vite": "^3.0.4",
+    "vue-tsc": "^0.39.4"
+  }
+}

@@ -1,14 +1,22 @@
 <template>
   <div style="width: 100%">
-    <nav-menu :data="menu" />
+    <nav-menu :data="menu"></nav-menu>
     <div class="table-content">
-      <m-table class="left-panel" :columns="columns" :data="data" :show-header="true" />
+      <m-table class="left-panel" :columns="columns" :data="data" :show-header="true"></m-table>
       <el-tabs class="right-panel" model-value="columns">
         <el-tab-pane label="columns" name="columns">
-          <magic-code-editor class="code-editor-content" :init-values="columns" @save="change" />
+          <magic-code-editor
+            class="code-editor-content"
+            :init-values="columns"
+            @save="change"
+          ></magic-code-editor>
         </el-tab-pane>
         <el-tab-pane label="data" name="data">
-          <magic-code-editor class="code-editor-content" :init-values="data" @save="changeData" />
+          <magic-code-editor
+            class="code-editor-content"
+            :init-values="data"
+            @save="changeData"
+          ></magic-code-editor>
         </el-tab-pane>
       </el-tabs>
     </div>

@@ -1,0 +1,48 @@
+{
+  "version": "1.1.0-beta.9",
+  "name": "@tmagic/core",
+  "sideEffects": [
+    "dist/*"
+  ],
+  "main": "dist/tmagic-core.umd.js",
+  "module": "dist/tmagic-core.mjs",
+  "types": "types/index.d.ts",
+  "exports": {
+    ".": {
+      "import": "./dist/tmagic-core.mjs",
+      "require": "./dist/tmagic-core.umd.js"
+    },
+    "./dist/style.css": {
+      "import": "./dist/style.css",
+      "require": "./dist/style.css"
+    },
+    "./*": "./*"
+  },
+  "license": "Apache-2.0",
+  "scripts": {
+    "build": "npm run build:type && vite build",
+    "build:type": "npm run clear:type && tsc --declaration --emitDeclarationOnly --project tsconfig.build.json",
+    "clear:type": "rimraf ./types"
+  },
+  "engines": {
+    "node": ">=14"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/Tencent/tmagic-editor.git"
+  },
+  "keywords": [
+    "vue"
+  ],
+  "dependencies": {
+    "@tmagic/schema": "1.1.0-beta.9",
+    "events": "^3.3.0"
+  },
+  "devDependencies": {
+    "@types/events": "^3.0.0",
+    "@types/node": "^15.12.4",
+    "rimraf": "^3.0.2",
+    "typescript": "^4.7.4",
+    "vite": "^3.0.4"
+  }
+}

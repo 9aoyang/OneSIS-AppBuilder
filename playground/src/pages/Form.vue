@@ -1,20 +1,25 @@
 <template>
   <div style="width: 100%">
-    <nav-menu :data="menu" />
+    <nav-menu :data="menu"></nav-menu>
     <div class="form-content">
-      <m-form ref="form" :config="config" :init-values="initValue" size="small" height="100%" />
+      <m-form
+        ref="form"
+        :config="config"
+        :init-values="initValue"
+        size="small"
+        height="100%"
+      ></m-form>
 
-      <magic-code-editor class="code-editor-content" :init-values="config" @save="change" />
+      <magic-code-editor
+        class="code-editor-content"
+        :init-values="config"
+        @save="change"
+      ></magic-code-editor>
     </div>
   </div>
 
   <el-dialog v-model="resultVisible" title="result" append-to-body>
-    <pre>
-      <code
-        class="language-javascript hljs"
-        v-html="result"
-      />
-    </pre>
+    <pre><code class="language-javascript hljs" v-html="result"></code></pre>
   </el-dialog>
 </template>
 

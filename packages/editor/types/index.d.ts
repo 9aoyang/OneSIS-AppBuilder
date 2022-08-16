@@ -1,0 +1,23 @@
+import './utils/polyfills';
+import { App } from 'vue';
+import type { InstallOptions } from './type';
+import './theme/index.scss';
+export type { MoveableOptions } from '@tmagic/stage';
+export * from './type';
+export * from './utils';
+export { default as TMagicEditor } from './Editor.vue';
+export { default as TMagicCodeEditor } from './layouts/CodeEditor.vue';
+export { default as editorService } from './services/editor';
+export { default as propsService } from './services/props';
+export { default as historyService } from './services/history';
+export { default as storageService } from './services/storage';
+export { default as eventsService } from './services/events';
+export { default as uiService } from './services/ui';
+export { default as ComponentListPanel } from './layouts/sidebar/ComponentListPanel.vue';
+export { default as LayerPanel } from './layouts/sidebar/LayerPanel.vue';
+export { default as PropsPanel } from './layouts/PropsPanel.vue';
+export { default as ToolButton } from './components/ToolButton.vue';
+declare const _default: {
+  install: (app: App, opt?: InstallOptions) => void;
+};
+export default _default;

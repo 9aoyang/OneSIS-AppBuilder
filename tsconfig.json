@@ -19,6 +19,15 @@
       "ESNext",
       "DOM"
     ],
+    "paths": {
+      // 内部模块都指向 src/index.ts, 会有更好的代码跳转体验.
+      "@tmagic/*": [
+        "packages/*/src"
+      ],
+      "@editor/*": [
+        "packages/editor/src/*"
+      ],
+    },
     "types": [
       "node",
       "vite/client",

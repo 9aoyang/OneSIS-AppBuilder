@@ -1,5 +1,5 @@
 <template>
-  <magic-ui-page :config="pageConfig" />
+  <magic-ui-page :config="pageConfig"></magic-ui-page>
 </template>
 
 <script lang="ts">

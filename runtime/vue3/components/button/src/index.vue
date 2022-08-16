@@ -1,13 +1,10 @@
 <template>
-  <button-demo @click="onClick">text</button-demo>
+  <button-demo :text="config.text"></button-demo>
 </template>
 <script lang="ts">
 import { defineComponent, ref } from 'vue';
+
 import buttonDemo from './components.vue';
-
-import Core from '@tmagic/core';
-
-import useApp from '../../useApp';
 
 export default defineComponent({
   name: 'MagicUiButton',
@@ -27,21 +24,11 @@ export default defineComponent({
     },
   },
 
-  setup(props) {
+  setup() {
     const text = ref('log');
-    const app: Core | undefined = useApp(props);
 
     return {
       text,
-
-      onClick() {
-        console.log('button:click');
-        app?.emit('button:click');
-      },
-
-      log() {
-        console.log('触发');
-      },
     };
   },
 });

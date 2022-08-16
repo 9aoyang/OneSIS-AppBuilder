@@ -2,14 +2,12 @@
   "name": "onesis-appbuilder",
   "private": true,
   "version": "0.0.0",
-  "engines": {
-    "node": ">=14"
-  },
   "lint-staged": {
     "*.{js,ts,vue}": "eslint --fix",
     "*.scss": "prettier --write"
   },
   "scripts": {
+    "bootstrap": "pnpm i && pnpm build",
     "docs": "pnpm --filter \"docs\" dev",
     "build:docs": "pnpm --filter \"docs\" build",
     "reinstall": "pnpm clean:all && pnpm i",
@@ -29,9 +27,20 @@
     "pg:vue2": "pnpm playground:vue2",
     "playground:react": "pnpm --filter \"runtime-react\" --filter \"tmagic-playground\" dev:react",
     "pg:react": "pnpm playground:react",
+    "build": "pnpm --filter \"@tmagic/*\" build",
     "build:runtime:admin": "pnpm --filter \"runtime-*\" build:admin",
     "build:playground": "pnpm --filter \"runtime-vue3\" build && pnpm --filter \"tmagic-playground\" build"
   },
+  "engines": {
+    "node": ">=14"
+  },
+  "workspaces": [
+    "packages/code-editor",
+    "packages/editor",
+    "packages/form",
+    "packages/stage",
+    "packages/utils"
+  ],
   "devDependencies": {
     "@commitlint/cli": "^17.0.3",
     "@commitlint/config-conventional": "^17.0.3",
@@ -51,6 +60,7 @@
     "rimraf": "^3.0.2",
     "typescript": "^4.7.4",
     "vite": "^3.0.7",
+    "vue": "^3.2.37",
     "vue-tsc": "^0.39.5"
   }
 }

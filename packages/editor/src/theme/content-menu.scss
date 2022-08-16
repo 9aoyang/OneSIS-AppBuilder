@@ -1,0 +1,46 @@
+.magic-editor-content-menu {
+  position: fixed;
+  font-size: 12px;
+  background: #fff;
+  box-shadow: 0 2px 8px 2px rgba(68, 73, 77, 0.16);
+  z-index: 9999;
+  transform-origin: 0% 0%;
+  font-weight: 600;
+  padding: 4px 0px;
+  overflow: auto;
+  max-height: 100%;
+
+  .menu-item {
+    color: #333;
+    display: flex;
+    -webkit-box-align: center;
+    align-items: center;
+    cursor: pointer;
+    min-width: 140px;
+    transition: all 0.2s ease 0s;
+    padding: 5px 14px;
+    border-left: 2px solid transparent;
+
+    .el-button {
+      width: 100%;
+      justify-content: flex-start;
+    }
+
+    .el-button--text,
+    i {
+      color: $--font-color;
+    }
+
+    &.divider {
+      padding: 0 14px;
+
+      .el-divider {
+        margin: 0;
+      }
+    }
+
+    &:hover {
+      background-color: $--hover-color;
+    }
+  }
+}

@@ -8,7 +8,7 @@
       text
       @click="item.handler"
     >
-      <el-icon><component :is="item.icon" /></el-icon><span>{{ item.text }}</span>
+      <el-icon><component :is="item.icon"></component></el-icon><span>{{ item.text }}</span>
     </el-button>
   </div>
 </template>

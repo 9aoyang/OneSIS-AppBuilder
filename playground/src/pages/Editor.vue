@@ -15,7 +15,7 @@
       :stage-rect="stageRect"
     >
       <template #workspace-content>
-        <DeviceGroup v-model="stageRect" />
+        <DeviceGroup v-model="stageRect"></DeviceGroup>
       </template>
     </m-editor>
 
@@ -31,7 +31,7 @@
         width="100%"
         :height="stageRect && stageRect.height"
         :src="previewUrl"
-      />
+      ></iframe>
     </el-dialog>
   </div>
 </template>
@@ -43,8 +43,8 @@ import { Coin, Connection, Document } from '@element-plus/icons-vue';
 import { ElMessage, ElMessageBox } from 'element-plus';
 import serialize from 'serialize-javascript';
 
-import type { MenuBarData, MoveableOptions, TMagicEditor } from '@tmagic/editor';
-import type { Id } from '@tmagic/schema';
+import { editorService, MenuBarData, MoveableOptions, TMagicEditor } from '@tmagic/editor';
+import type { Id, MContainer, MNode } from '@tmagic/schema';
 import { NodeType } from '@tmagic/schema';
 import StageCore from '@tmagic/stage';
 import { asyncLoadJs } from '@tmagic/utils';
@@ -65,8 +65,8 @@ const propsValues = ref<Record<string, any>>({});
 const propsConfigs = ref<Record<string, any>>({});
 const eventMethodList = ref<Record<string, any>>({});
 const stageRect = ref({
-  width: 317,
-  height: 875,
+  width: 375,
+  height: 817,
 });
 
 const previewUrl = computed(
@@ -177,6 +177,22 @@ asyncLoadJs(`${VITE_ENTRY_PATH}/event/index.umd.js`).then(() => {
 });
 
 save();
+
+editorService.usePlugin({
+  beforeDoAdd: (config: MNode, parent?: MContainer | null) => {
+    if (config.type === 'overlay') {
+      config.style = {
+        ...config.style,
+        left: 0,
+        top: 0,
+      };
+
+      return [config, editorService.get('page')];
+    }
+
+    return [config, parent];
+  },
+});
 </script>
 
 <style lang="scss">
