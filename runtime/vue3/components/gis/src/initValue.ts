@@ -8,5 +8,4 @@ export default {
     width: '250px',
     height: '250px',
   } as CSSStyleDeclaration,
-  items: [],
 };
