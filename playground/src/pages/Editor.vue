@@ -65,8 +65,8 @@ const propsValues = ref<Record<string, any>>({});
 const propsConfigs = ref<Record<string, any>>({});
 const eventMethodList = ref<Record<string, any>>({});
 const stageRect = ref({
-  width: 375,
-  height: 817,
+  width: 1024,
+  height: 768,
 });
 
 const previewUrl = computed(
