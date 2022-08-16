@@ -1,8 +1,9 @@
 <template>
-  <button @click="onClick">text</button>
+  <button-demo @click="onClick">text</button-demo>
 </template>
 <script lang="ts">
 import { defineComponent, ref } from 'vue';
+import buttonDemo from './components.vue';
 
 import Core from '@tmagic/core';
 
@@ -10,6 +11,10 @@ import useApp from '../../useApp';
 
 export default defineComponent({
   name: 'MagicUiButton',
+
+  components: {
+    buttonDemo,
+  },
   props: {
     config: {
       type: Object,

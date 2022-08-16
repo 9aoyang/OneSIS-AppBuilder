@@ -1,8 +1,8 @@
 <template>
   <el-radio-group v-model="viewerDevice" size="small" :class="viewerDevice" @change="deviceSelect">
+    <el-radio-button label="phone"> Phone </el-radio-button>
     <el-radio-button label="pad"> Pad </el-radio-button>
     <el-radio-button label="pc"> PC </el-radio-button>
-    <el-radio-button label="phone"> Phone </el-radio-button>
   </el-radio-group>
 </template>
 
@@ -39,8 +39,8 @@ export default defineComponent({
     modelValue: {
       type: Object,
       default: () => ({
-        width: getDeviceWidth(DeviceType.PC),
-        height: getDeviceHeight(DeviceType.PC),
+        width: getDeviceWidth(DeviceType.Phone),
+        height: getDeviceHeight(DeviceType.Phone),
       }),
     },
   },
