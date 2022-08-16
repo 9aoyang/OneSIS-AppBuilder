@@ -32,12 +32,10 @@
     "build:runtime:admin": "pnpm --filter \"runtime-*\" build:admin",
     "build:playground": "pnpm --filter \"runtime-vue3\" build && pnpm --filter \"tmagic-playground\" build"
   },
-  "dependencies": {
-    "vue": "^3.2.37"
-  },
   "devDependencies": {
     "@commitlint/cli": "^17.0.3",
     "@commitlint/config-conventional": "^17.0.3",
+    "@types/node": "^15.12.4",
     "@typescript-eslint/parser": "^5.33.0",
     "@vitejs/plugin-vue": "^3.0.3",
     "commitizen": "^4.2.5",

@@ -6,6 +6,7 @@ importers:
     specifiers:
       '@commitlint/cli': ^17.0.3
       '@commitlint/config-conventional': ^17.0.3
+      '@types/node': ^15.12.4
       '@typescript-eslint/parser': ^5.33.0
       '@vitejs/plugin-vue': ^3.0.3
       commitizen: ^4.2.5
@@ -21,15 +22,13 @@ importers:
       rimraf: ^3.0.2
       typescript: ^4.7.4
       vite: ^3.0.7
-      vue: ^3.2.37
       vue-tsc: ^0.39.5
-    dependencies:
-      vue: 3.2.37
     devDependencies:
       '@commitlint/cli': 17.0.3
       '@commitlint/config-conventional': 17.0.3
+      '@types/node': 15.14.9
       '@typescript-eslint/parser': 5.33.0_hxadhbs2xogijvk7vq4t2azzbu
-      '@vitejs/plugin-vue': 3.0.3_vite@3.0.7+vue@3.2.37
+      '@vitejs/plugin-vue': 3.0.3_vite@3.0.7
       commitizen: 4.2.5
       cz-conventional-changelog: 3.3.0
       eslint: 7.32.0
@@ -639,10 +638,10 @@ packages:
       '@commitlint/execute-rule': 17.0.0
       '@commitlint/resolve-extends': 17.0.3
       '@commitlint/types': 17.0.0
-      '@types/node': 18.7.3
+      '@types/node': 18.7.5
       chalk: 4.1.2
       cosmiconfig: 7.0.1
-      cosmiconfig-typescript-loader: 2.0.2_vugoqbkjnxc3odpmeek2omb3o4
+      cosmiconfig-typescript-loader: 2.0.2_7se4izhtmlozvpvgaax5rnuwve
       lodash: 4.17.21
       resolve-from: 5.0.0
       typescript: 4.7.4
@@ -1229,13 +1228,8 @@ packages:
     resolution: {integrity: sha512-qjd88DrCxupx/kJD5yQgZdcYKZKSIGBVDIBE1/LTGcNm3d2Np/jxojkdePDdfnBHJc5W7vSMpbJ1aB7p/Py69A==}
     dev: true
 
-  /@types/node/18.7.3:
-    resolution: {integrity: sha512-LJgzOEwWuMTBxHzgBR/fhhBOWrvBjvO+zPteUgbbuQi80rYIZHrk1mNbRUqPZqSLP2H7Rwt1EFLL/tNLD1Xx/w==}
-    dev: true
-
   /@types/node/18.7.5:
     resolution: {integrity: sha512-NcKK6Ts+9LqdHJaW6HQmgr7dT/i3GOHG+pt6BiWv++5SnjtRd4NXeiuN2kA153SjhXPR/AhHIPHPbrsbpUVOww==}
-    dev: false
 
   /@types/normalize-package-data/2.4.1:
     resolution: {integrity: sha512-Gj7cI7z+98M282Tqmp2K5EIsoouUEzbBJhQQzDE3jSIRk6r9gsz0oUokqIUR4u1R3dMHo0pDHM7sNOHyhulypw==}
@@ -1384,7 +1378,7 @@ packages:
     transitivePeerDependencies:
       - supports-color
 
-  /@vitejs/plugin-vue/3.0.3_vite@3.0.7+vue@3.2.37:
+  /@vitejs/plugin-vue/3.0.3_vite@3.0.7:
     resolution: {integrity: sha512-U4zNBlz9mg+TA+i+5QPc3N5lQvdUXENZLO2h0Wdzp56gI1MWhqJOv+6R+d4kOzoaSSq6TnGPBdZAXKOe4lXy6g==}
     engines: {node: ^14.18.0 || >=16.0.0}
     peerDependencies:
@@ -1392,6 +1386,16 @@ packages:
       vue: ^3.2.25
     dependencies:
       vite: 3.0.7
+    dev: true
+
+  /@vitejs/plugin-vue/3.0.3_vite@3.0.7+vue@3.2.37:
+    resolution: {integrity: sha512-U4zNBlz9mg+TA+i+5QPc3N5lQvdUXENZLO2h0Wdzp56gI1MWhqJOv+6R+d4kOzoaSSq6TnGPBdZAXKOe4lXy6g==}
+    engines: {node: ^14.18.0 || >=16.0.0}
+    peerDependencies:
+      vite: ^3.0.0
+      vue: ^3.2.25
+    dependencies:
+      vite: 3.0.7_sass@1.54.4+terser@5.14.2
       vue: 3.2.37
     dev: true
 
@@ -2181,16 +2185,16 @@ packages:
     resolution: {integrity: sha512-0QTBSYSUZ6Gq21utGzkfITDylE8jWC9Ne1D2MrhvlsZBI1x39OdDIVbzSqtgMndIy6BlHxBXpMGqzZmnztg2rg==}
     requiresBuild: true
 
-  /cosmiconfig-typescript-loader/2.0.2_vugoqbkjnxc3odpmeek2omb3o4:
+  /cosmiconfig-typescript-loader/2.0.2_7se4izhtmlozvpvgaax5rnuwve:
     resolution: {integrity: sha512-KmE+bMjWMXJbkWCeY4FJX/npHuZPNr9XF9q9CIQ/bpFwi1qHfCmSiKarrCcRa0LO4fWjk93pVoeRtJAkTGcYNw==}
     engines: {node: '>=12', npm: '>=6'}
     peerDependencies:
       '@types/node': '*'
       typescript: '>=3'
     dependencies:
-      '@types/node': 18.7.3
+      '@types/node': 18.7.5
       cosmiconfig: 7.0.1
-      ts-node: 10.9.1_vugoqbkjnxc3odpmeek2omb3o4
+      ts-node: 10.9.1_7se4izhtmlozvpvgaax5rnuwve
       typescript: 4.7.4
     transitivePeerDependencies:
       - '@swc/core'
@@ -4831,7 +4835,7 @@ packages:
     engines: {node: '>=8'}
     dev: true
 
-  /ts-node/10.9.1_vugoqbkjnxc3odpmeek2omb3o4:
+  /ts-node/10.9.1_7se4izhtmlozvpvgaax5rnuwve:
     resolution: {integrity: sha512-NtVysVPkxxrwFGUUxGYhfux8k78pQB3JqYBXlLRZgdGUqTO5wU/UyHop5p70iEbGhB7q5KmiZiU0Y3KlJrScEw==}
     hasBin: true
     peerDependencies:
@@ -4850,7 +4854,7 @@ packages:
       '@tsconfig/node12': 1.0.11
       '@tsconfig/node14': 1.0.3
       '@tsconfig/node16': 1.0.3
-      '@types/node': 18.7.3
+      '@types/node': 18.7.5
       acorn: 8.8.0
       acorn-walk: 8.2.0
       arg: 4.1.3

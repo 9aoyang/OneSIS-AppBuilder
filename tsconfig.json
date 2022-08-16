@@ -15,12 +15,10 @@
     "sourceMap": true,
     "useDefineForClassFields": true,
     "baseUrl": ".",
-    "lib": ["ESNext", "DOM"],
-    "paths": {
-      // 内部模块都指向 src/index.ts, 会有更好的代码跳转体验.
-      "@tmagic/*": ["packages/*/src"],
-      "@editor/*": ["packages/editor/src/*"],
-    },
+    "lib": [
+      "ESNext",
+      "DOM"
+    ],
     "types": [
       "node",
       "vite/client",
