@@ -18,6 +18,6 @@ export { default as LayerPanel } from './layouts/sidebar/LayerPanel.vue';
 export { default as PropsPanel } from './layouts/PropsPanel.vue';
 export { default as ToolButton } from './components/ToolButton.vue';
 declare const _default: {
-  install: (app: App, opt?: InstallOptions) => void;
+    install: (app: App, opt?: InstallOptions) => void;
 };
 export default _default;

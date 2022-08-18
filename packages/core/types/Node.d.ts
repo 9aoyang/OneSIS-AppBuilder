@@ -5,23 +5,23 @@ import type App from './App';
 import type Page from './Page';
 import Store from './Store';
 interface NodeOptions {
-  config: MComponent | MContainer;
-  page?: Page;
-  parent?: Node;
-  app: App;
+    config: MComponent | MContainer;
+    page?: Page;
+    parent?: Node;
+    app: App;
 }
 declare class Node extends EventEmitter {
-  data: MComponent | MContainer | MPage;
-  style?: {
-    [key: string]: any;
-  };
-  events?: EventItemConfig[];
-  instance?: any;
-  page?: Page;
-  parent?: Node;
-  app: App;
-  store: Store;
-  constructor(options: NodeOptions);
-  private listenLifeSafe;
+    data: MComponent | MContainer | MPage;
+    style?: {
+        [key: string]: any;
+    };
+    events?: EventItemConfig[];
+    instance?: any;
+    page?: Page;
+    parent?: Node;
+    app: App;
+    store: Store;
+    constructor(options: NodeOptions);
+    private listenLifeSafe;
 }
 export default Node;

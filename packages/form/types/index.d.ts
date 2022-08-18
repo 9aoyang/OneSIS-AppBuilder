@@ -32,6 +32,6 @@ export { default as MSelect } from './fields/Select.vue';
 export { default as MCascader } from './fields/Cascader.vue';
 export { default as MDynamicField } from './fields/DynamicField.vue';
 declare const _default: {
-  install: (app: App<any>, opt: any) => void;
+    install: (app: App<any>, opt: any) => void;
 };
 export default _default;

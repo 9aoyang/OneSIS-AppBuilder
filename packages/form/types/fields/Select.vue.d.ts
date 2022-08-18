@@ -1,30 +1,28 @@
 import { PropType, Ref } from 'vue';
 import { SelectConfig, SelectGroupOption, SelectOption } from '../schema';
-declare const _default: import('vue').DefineComponent<
-  {
+declare const _default: import("vue").DefineComponent<{
     config: {
-      type: PropType<SelectConfig>;
-      required: true;
+        type: PropType<SelectConfig>;
+        required: true;
     };
     model: {
-      type: ObjectConstructor;
-      required: boolean;
-      default: () => {};
+        type: ObjectConstructor;
+        required: boolean;
+        default: () => {};
     };
     name: {
-      type: StringConstructor;
-      default: string;
+        type: StringConstructor;
+        default: string;
     };
     disabled: {
-      type: BooleanConstructor;
-      default: boolean;
+        type: BooleanConstructor;
+        default: boolean;
     };
-    size: PropType<'small' | 'mini' | 'medium'>;
+    size: PropType<"small" | "mini" | "medium">;
     prop: StringConstructor;
     initValues: ObjectConstructor;
     values: ObjectConstructor;
-  },
-  {
+}, {
     select: Ref<any>;
     loading: Ref<boolean>;
     remote: Ref<boolean>;
@@ -37,48 +35,33 @@ declare const _default: import('vue').DefineComponent<
     changeHandler(value: any): void;
     visibleHandler(visible: boolean): Promise<void>;
     remoteMethod(q: string): Promise<void>;
-  },
-  unknown,
-  {},
-  {},
-  import('vue').ComponentOptionsMixin,
-  import('vue').ComponentOptionsMixin,
-  'change'[],
-  'change',
-  import('vue').VNodeProps &
-    import('vue').AllowedComponentProps &
-    import('vue').ComponentCustomProps,
-  Readonly<
-    import('vue').ExtractPropTypes<{
-      config: {
+}, unknown, {}, {}, import("vue").ComponentOptionsMixin, import("vue").ComponentOptionsMixin, "change"[], "change", import("vue").VNodeProps & import("vue").AllowedComponentProps & import("vue").ComponentCustomProps, Readonly<import("vue").ExtractPropTypes<{
+    config: {
         type: PropType<SelectConfig>;
         required: true;
-      };
-      model: {
+    };
+    model: {
         type: ObjectConstructor;
         required: boolean;
         default: () => {};
-      };
-      name: {
+    };
+    name: {
         type: StringConstructor;
         default: string;
-      };
-      disabled: {
+    };
+    disabled: {
         type: BooleanConstructor;
         default: boolean;
-      };
-      size: PropType<'small' | 'mini' | 'medium'>;
-      prop: StringConstructor;
-      initValues: ObjectConstructor;
-      values: ObjectConstructor;
-    }>
-  > & {
+    };
+    size: PropType<"small" | "mini" | "medium">;
+    prop: StringConstructor;
+    initValues: ObjectConstructor;
+    values: ObjectConstructor;
+}>> & {
     onChange?: ((...args: any[]) => any) | undefined;
-  },
-  {
+}, {
     name: string;
     disabled: boolean;
     model: Record<string, any>;
-  }
->;
+}>;
 export default _default;

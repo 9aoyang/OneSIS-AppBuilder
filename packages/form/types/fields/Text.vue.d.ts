@@ -1,78 +1,61 @@
 import { PropType } from 'vue';
 import { TextConfig } from '../schema';
-declare const _default: import('vue').DefineComponent<
-  {
+declare const _default: import("vue").DefineComponent<{
     config: {
-      type: PropType<TextConfig>;
-      required: true;
+        type: PropType<TextConfig>;
+        required: true;
     };
     model: {
-      type: ObjectConstructor;
-      required: boolean;
-      default: () => {};
+        type: ObjectConstructor;
+        required: boolean;
+        default: () => {};
     };
     name: {
-      type: StringConstructor;
-      default: string;
+        type: StringConstructor;
+        default: string;
     };
     disabled: {
-      type: BooleanConstructor;
-      default: boolean;
+        type: BooleanConstructor;
+        default: boolean;
     };
-    size: PropType<'small' | 'mini' | 'medium'>;
+    size: PropType<"small" | "mini" | "medium">;
     prop: StringConstructor;
     initValues: ObjectConstructor;
     values: ObjectConstructor;
-  },
-  {
-    modelName: import('vue').ComputedRef<string | number>;
+}, {
+    modelName: import("vue").ComputedRef<string | number>;
     changeHandler(v: string | number): void;
     inputHandler(v: string | number): void;
     buttonClickHandler(): void;
     keyUpHandler($event: KeyboardEvent): void;
-  },
-  unknown,
-  {},
-  {},
-  import('vue').ComponentOptionsMixin,
-  import('vue').ComponentOptionsMixin,
-  ('change' | 'input')[],
-  'input' | 'change',
-  import('vue').VNodeProps &
-    import('vue').AllowedComponentProps &
-    import('vue').ComponentCustomProps,
-  Readonly<
-    import('vue').ExtractPropTypes<{
-      config: {
+}, unknown, {}, {}, import("vue").ComponentOptionsMixin, import("vue").ComponentOptionsMixin, ("change" | "input")[], "input" | "change", import("vue").VNodeProps & import("vue").AllowedComponentProps & import("vue").ComponentCustomProps, Readonly<import("vue").ExtractPropTypes<{
+    config: {
         type: PropType<TextConfig>;
         required: true;
-      };
-      model: {
+    };
+    model: {
         type: ObjectConstructor;
         required: boolean;
         default: () => {};
-      };
-      name: {
+    };
+    name: {
         type: StringConstructor;
         default: string;
-      };
-      disabled: {
+    };
+    disabled: {
         type: BooleanConstructor;
         default: boolean;
-      };
-      size: PropType<'small' | 'mini' | 'medium'>;
-      prop: StringConstructor;
-      initValues: ObjectConstructor;
-      values: ObjectConstructor;
-    }>
-  > & {
+    };
+    size: PropType<"small" | "mini" | "medium">;
+    prop: StringConstructor;
+    initValues: ObjectConstructor;
+    values: ObjectConstructor;
+}>> & {
     onChange?: ((...args: any[]) => any) | undefined;
     onInput?: ((...args: any[]) => any) | undefined;
-  },
-  {
+}, {
     name: string;
     disabled: boolean;
     model: Record<string, any>;
-  }
->;
+}>;
 export default _default;

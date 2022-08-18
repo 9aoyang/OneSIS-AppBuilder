@@ -1,11 +1,7 @@
 import type { MNode } from '@tmagic/schema';
 export * from './dom';
 export declare const sleep: (ms: number) => Promise<void>;
-export declare const datetimeFormatter: (
-  v: string | Date,
-  defaultValue?: string,
-  format?: string
-) => string | number;
+export declare const datetimeFormatter: (v: string | Date, defaultValue?: string, format?: string) => string | number;
 export declare const toLine: (name?: string) => string;
 export declare const toHump: (name?: string) => string;
 export declare const emptyFn: () => any;

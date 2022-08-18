@@ -3,50 +3,42 @@ import type { FormConfig } from '@tmagic/form';
 import type { MApp, MNode } from '@tmagic/schema';
 import type StageCore from '@tmagic/stage';
 import { ContainerHighlightType, MoveableOptions } from '@tmagic/stage';
-import type {
-  ComponentGroup,
-  MenuBarData,
-  MenuItem,
-  Services,
-  SideBarData,
-  StageRect,
-} from './type';
-declare const _default: import('vue').DefineComponent<
-  {
+import type { ComponentGroup, MenuBarData, MenuItem, Services, SideBarData, StageRect } from './type';
+declare const _default: import("vue").DefineComponent<{
     /** 页面初始值 */
     modelValue: {
-      type: PropType<MApp>;
-      default: () => {};
-      require: boolean;
+        type: PropType<MApp>;
+        default: () => {};
+        require: boolean;
     };
     /** 左侧面板中的组件列表 */
     componentGroupList: {
-      type: PropType<ComponentGroup[]>;
-      default: () => never[];
+        type: PropType<ComponentGroup[]>;
+        default: () => never[];
     };
     /** 左侧面板配置 */
     sidebar: {
-      type: PropType<SideBarData>;
+        type: PropType<SideBarData>;
     };
     layerContentMenu: {
-      type: PropType<MenuItem[]>;
-      default: () => never[];
+        type: PropType<MenuItem[]>;
+        default: () => never[];
     };
     stageContentMenu: {
-      type: PropType<MenuItem[]>;
-      default: () => never[];
+        type: PropType<MenuItem[]>;
+        default: () => never[];
     };
     /** 顶部工具栏配置 */
     menu: {
-      type: PropType<MenuBarData>;
-      default: () => {
-        left: never[];
-        right: never[];
-      };
+        type: PropType<MenuBarData>;
+        default: () => {
+            left: never[];
+            right: never[];
+        };
     };
     /** 中间工作区域中画布渲染的内容 */
     render: {
-      type: PropType<() => HTMLDivElement>;
+        type: PropType<() => HTMLDivElement>;
     };
     /** 中间工作区域中画布通过iframe渲染时的页面url */
     runtimeUrl: StringConstructor;
@@ -54,169 +46,154 @@ declare const _default: import('vue').DefineComponent<
     autoScrollIntoView: BooleanConstructor;
     /** 组件的属性配置表单的dsl */
     propsConfigs: {
-      type: PropType<Record<string, FormConfig>>;
-      default: () => {};
+        type: PropType<Record<string, FormConfig>>;
+        default: () => {};
     };
     /** 添加组件时的默认值 */
     propsValues: {
-      type: PropType<Record<string, MNode>>;
-      default: () => {};
+        type: PropType<Record<string, MNode>>;
+        default: () => {};
     };
     /** 组件联动事件选项列表 */
     eventMethodList: {
-      type: ObjectConstructor;
-      default: () => {};
+        type: ObjectConstructor;
+        default: () => {};
     };
     /** 画布中组件选中框的移动范围 */
     moveableOptions: {
-      type: PropType<MoveableOptions | ((core?: StageCore) => MoveableOptions)>;
+        type: PropType<MoveableOptions | ((core?: StageCore) => MoveableOptions)>;
     };
     /** 编辑器初始化时默认选中的组件ID */
     defaultSelected: {
-      type: (NumberConstructor | StringConstructor)[];
+        type: (NumberConstructor | StringConstructor)[];
     };
     canSelect: {
-      type: PropType<(el: HTMLElement) => boolean | Promise<boolean>>;
-      default: (el: HTMLElement) => boolean;
+        type: PropType<(el: HTMLElement) => boolean | Promise<boolean>>;
+        default: (el: HTMLElement) => boolean;
     };
     isContainer: {
-      type: PropType<(el: HTMLElement) => boolean | Promise<boolean>>;
-      default: (el: HTMLElement) => boolean;
+        type: PropType<(el: HTMLElement) => boolean | Promise<boolean>>;
+        default: (el: HTMLElement) => boolean;
     };
     containerHighlightClassName: {
-      type: StringConstructor;
-      default: string;
+        type: StringConstructor;
+        default: string;
     };
     containerHighlightDuration: {
-      type: NumberConstructor;
-      default: number;
+        type: NumberConstructor;
+        default: number;
     };
     containerHighlightType: {
-      type: PropType<ContainerHighlightType>;
-      default: ContainerHighlightType;
+        type: PropType<ContainerHighlightType>;
+        default: ContainerHighlightType;
     };
     stageRect: {
-      type: PropType<StageRect>;
+        type: PropType<StageRect>;
     };
     codeOptions: {
-      type: ObjectConstructor;
-      default: () => {};
+        type: ObjectConstructor;
+        default: () => {};
     };
     updateDragEl: {
-      type: PropType<(el: HTMLDivElement, target: HTMLElement) => void>;
+        type: PropType<(el: HTMLDivElement, target: HTMLElement) => void>;
     };
-  },
-  Services,
-  unknown,
-  {},
-  {},
-  import('vue').ComponentOptionsMixin,
-  import('vue').ComponentOptionsMixin,
-  ('props-panel-mounted' | 'update:modelValue')[],
-  'props-panel-mounted' | 'update:modelValue',
-  import('vue').VNodeProps &
-    import('vue').AllowedComponentProps &
-    import('vue').ComponentCustomProps,
-  Readonly<
-    import('vue').ExtractPropTypes<{
-      /** 页面初始值 */
-      modelValue: {
+}, Services, unknown, {}, {}, import("vue").ComponentOptionsMixin, import("vue").ComponentOptionsMixin, ("props-panel-mounted" | "update:modelValue")[], "props-panel-mounted" | "update:modelValue", import("vue").VNodeProps & import("vue").AllowedComponentProps & import("vue").ComponentCustomProps, Readonly<import("vue").ExtractPropTypes<{
+    /** 页面初始值 */
+    modelValue: {
         type: PropType<MApp>;
         default: () => {};
         require: boolean;
-      };
-      /** 左侧面板中的组件列表 */
-      componentGroupList: {
+    };
+    /** 左侧面板中的组件列表 */
+    componentGroupList: {
         type: PropType<ComponentGroup[]>;
         default: () => never[];
-      };
-      /** 左侧面板配置 */
-      sidebar: {
+    };
+    /** 左侧面板配置 */
+    sidebar: {
         type: PropType<SideBarData>;
-      };
-      layerContentMenu: {
+    };
+    layerContentMenu: {
         type: PropType<MenuItem[]>;
         default: () => never[];
-      };
-      stageContentMenu: {
+    };
+    stageContentMenu: {
         type: PropType<MenuItem[]>;
         default: () => never[];
-      };
-      /** 顶部工具栏配置 */
-      menu: {
+    };
+    /** 顶部工具栏配置 */
+    menu: {
         type: PropType<MenuBarData>;
         default: () => {
-          left: never[];
-          right: never[];
+            left: never[];
+            right: never[];
         };
-      };
-      /** 中间工作区域中画布渲染的内容 */
-      render: {
+    };
+    /** 中间工作区域中画布渲染的内容 */
+    render: {
         type: PropType<() => HTMLDivElement>;
-      };
-      /** 中间工作区域中画布通过iframe渲染时的页面url */
-      runtimeUrl: StringConstructor;
-      /** 选中时是否自动滚动到可视区域 */
-      autoScrollIntoView: BooleanConstructor;
-      /** 组件的属性配置表单的dsl */
-      propsConfigs: {
+    };
+    /** 中间工作区域中画布通过iframe渲染时的页面url */
+    runtimeUrl: StringConstructor;
+    /** 选中时是否自动滚动到可视区域 */
+    autoScrollIntoView: BooleanConstructor;
+    /** 组件的属性配置表单的dsl */
+    propsConfigs: {
         type: PropType<Record<string, FormConfig>>;
         default: () => {};
-      };
-      /** 添加组件时的默认值 */
-      propsValues: {
+    };
+    /** 添加组件时的默认值 */
+    propsValues: {
         type: PropType<Record<string, MNode>>;
         default: () => {};
-      };
-      /** 组件联动事件选项列表 */
-      eventMethodList: {
+    };
+    /** 组件联动事件选项列表 */
+    eventMethodList: {
         type: ObjectConstructor;
         default: () => {};
-      };
-      /** 画布中组件选中框的移动范围 */
-      moveableOptions: {
+    };
+    /** 画布中组件选中框的移动范围 */
+    moveableOptions: {
         type: PropType<MoveableOptions | ((core?: StageCore) => MoveableOptions)>;
-      };
-      /** 编辑器初始化时默认选中的组件ID */
-      defaultSelected: {
+    };
+    /** 编辑器初始化时默认选中的组件ID */
+    defaultSelected: {
         type: (NumberConstructor | StringConstructor)[];
-      };
-      canSelect: {
+    };
+    canSelect: {
         type: PropType<(el: HTMLElement) => boolean | Promise<boolean>>;
         default: (el: HTMLElement) => boolean;
-      };
-      isContainer: {
+    };
+    isContainer: {
         type: PropType<(el: HTMLElement) => boolean | Promise<boolean>>;
         default: (el: HTMLElement) => boolean;
-      };
-      containerHighlightClassName: {
+    };
+    containerHighlightClassName: {
         type: StringConstructor;
         default: string;
-      };
-      containerHighlightDuration: {
+    };
+    containerHighlightDuration: {
         type: NumberConstructor;
         default: number;
-      };
-      containerHighlightType: {
+    };
+    containerHighlightType: {
         type: PropType<ContainerHighlightType>;
         default: ContainerHighlightType;
-      };
-      stageRect: {
+    };
+    stageRect: {
         type: PropType<StageRect>;
-      };
-      codeOptions: {
+    };
+    codeOptions: {
         type: ObjectConstructor;
         default: () => {};
-      };
-      updateDragEl: {
+    };
+    updateDragEl: {
         type: PropType<(el: HTMLDivElement, target: HTMLElement) => void>;
-      };
-    }>
-  > & {
-    'onProps-panel-mounted'?: ((...args: any[]) => any) | undefined;
-    'onUpdate:modelValue'?: ((...args: any[]) => any) | undefined;
-  },
-  {
+    };
+}>> & {
+    "onProps-panel-mounted"?: ((...args: any[]) => any) | undefined;
+    "onUpdate:modelValue"?: ((...args: any[]) => any) | undefined;
+}, {
     menu: MenuBarData;
     codeOptions: Record<string, any>;
     layerContentMenu: MenuItem[];
@@ -232,6 +209,5 @@ declare const _default: import('vue').DefineComponent<
     containerHighlightClassName: string;
     containerHighlightDuration: number;
     containerHighlightType: ContainerHighlightType;
-  }
->;
+}>;
 export default _default;

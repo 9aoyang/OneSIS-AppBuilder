@@ -1,7 +1,7 @@
 import Button from './button';
 
 const ui: Record<string, any> = {
-  button: Button,
+  demo: Button,
 };
 
 export default ui;

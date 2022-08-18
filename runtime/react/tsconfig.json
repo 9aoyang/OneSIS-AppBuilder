@@ -20,5 +20,4 @@
       "@tmagic/*": ["../packages/*"],
     },
   },
-  "include": ["./page", "./playground"]
 }

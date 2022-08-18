@@ -13,12 +13,9 @@ export declare const beforePaste: (position: PastePosition, config: MNode[]) => 
  * @param id 元素id
  * @returns PastePosition 转换后的坐标
  */
-export declare const getPositionInContainer: (
-  position: PastePosition | undefined,
-  id: Id
-) => {
-  left: number;
-  top: number;
+export declare const getPositionInContainer: (position: PastePosition | undefined, id: Id) => {
+    left: number;
+    top: number;
 };
 export declare const getAddParent: (addNode: AddMNode | MNode[]) => MContainer | undefined;
 export declare const getDefaultConfig: (addNode: AddMNode, parentNode: MContainer) => Promise<any>;

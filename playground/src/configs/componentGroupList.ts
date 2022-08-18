@@ -9,8 +9,8 @@ const listMap = {
       items: [
         {
           icon: Watermelon,
-          text: '按钮',
-          type: 'button',
+          text: 'Demo',
+          type: 'demo',
         },
       ],
     },
@@ -22,8 +22,8 @@ const listMap = {
       items: [
         {
           icon: Chicken,
-          text: '按钮',
-          type: 'button',
+          text: 'Demo',
+          type: 'demo',
         },
       ],
     },
@@ -35,8 +35,8 @@ const listMap = {
       items: [
         {
           icon: Sugar,
-          text: '按钮',
-          type: 'button',
+          text: 'Demo',
+          type: 'demo',
         },
       ],
     },

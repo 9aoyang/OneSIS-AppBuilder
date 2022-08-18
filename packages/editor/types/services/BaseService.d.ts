@@ -48,12 +48,12 @@ import { EventEmitter } from 'events';
  *  });
  */
 export default class extends EventEmitter {
-  private pluginOptionsList;
-  private middleware;
-  private taskList;
-  private doingTask;
-  constructor(methods?: string[], serialMethods?: string[]);
-  use(options: Record<string, Function>): void;
-  usePlugin(options: Record<string, Function>): void;
-  private doTask;
+    private pluginOptionsList;
+    private middleware;
+    private taskList;
+    private doingTask;
+    constructor(methods?: string[], serialMethods?: string[]);
+    use(options: Record<string, Function>): void;
+    usePlugin(options: Record<string, Function>): void;
+    private doTask;
 }

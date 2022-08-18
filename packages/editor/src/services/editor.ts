@@ -1,21 +1,3 @@
-/*
- * Tencent is pleased to support the open source community by making TMagicEditor available.
- *
- * Copyright (C) 2021 THL A29 Limited, a Tencent company.  All rights reserved.
- *
- * Licensed under the Apache License, Version 2.0 (the "License");
- * you may not use this file except in compliance with the License.
- * You may obtain a copy of the License at
- *
- *   http://www.apache.org/licenses/LICENSE-2.0
- *
- * Unless required by applicable law or agreed to in writing, software
- * distributed under the License is distributed on an "AS IS" BASIS,
- * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
- * See the License for the specific language governing permissions and
- * limitations under the License.
- */
-
 import { reactive, toRaw } from 'vue';
 import { cloneDeep, mergeWith, uniq } from 'lodash-es';
 
@@ -81,7 +63,7 @@ class Editor extends BaseService {
         'highlight',
       ],
       // 需要注意循环依赖问题，如果函数间有相互调用的话，不能设置为串行调用
-      ['select', 'update', 'moveLayer']
+      ['select', 'update', 'moveLayer'],
     );
   }
 
@@ -305,7 +287,12 @@ class Editor extends BaseService {
     const layout = await this.getLayout(toRaw(parent), node as MNode);
     node.style = getInitPositionStyle(node.style, layout);
 
-    await stage?.add({ config: cloneDeep(node), parentId: parent.id, root: cloneDeep(root) });
+    await stage?.add({
+      config: cloneDeep(node),
+      parent: cloneDeep(parent),
+      parentId: parent.id,
+      root: cloneDeep(root),
+    });
 
     node.style = fixNodePosition(node, parent, stage);
 
@@ -322,10 +309,7 @@ class Editor extends BaseService {
    * @param parent 要添加到的容器组件节点配置，如果不设置，默认为当前选中的组件的父节点
    * @returns 添加后的节点
    */
-  public async add(
-    addNode: AddMNode | MNode[],
-    parent?: MContainer | null
-  ): Promise<MNode | MNode[]> {
+  public async add(addNode: AddMNode | MNode[], parent?: MContainer | null): Promise<MNode | MNode[]> {
     const stage = this.get<StageCore | null>('stage');
 
     const parentNode = parent && typeof parent !== 'function' ? parent : getAddParent(addNode);
@@ -344,6 +328,7 @@ class Editor extends BaseService {
     }
 
     const newNodes = await Promise.all(addNodes.map((node) => this.doAdd(node, parentNode)));
+
 
     if (newNodes.length > 1) {
       const newNodeIds = newNodes.map((node) => node.id);
