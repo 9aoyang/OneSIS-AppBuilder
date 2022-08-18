@@ -1,10 +1,5 @@
 <template>
-  <m-fields-link
-    :config="formConfig"
-    :model="modelValue"
-    name="form"
-    @change="changeHandler"
-  ></m-fields-link>
+  <m-fields-link :config="formConfig" :model="modelValue" name="form" @change="changeHandler"></m-fields-link>
 </template>
 
 <script lang="ts">
@@ -19,7 +14,7 @@ interface CodeLinkConfig {
 }
 
 export default defineComponent({
-  name: 'MFieldsCodeLink',
+  name: 'm-fields-code-link',
 
   props: {
     config: {

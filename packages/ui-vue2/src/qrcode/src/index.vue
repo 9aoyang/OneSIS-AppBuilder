@@ -9,7 +9,7 @@ import QRCode from 'qrcode';
 import useApp from '../../useApp';
 
 export default defineComponent({
-  name: 'MagicUiQrcode',
+  name: 'magic-ui-qrcode',
 
   props: {
     config: {
@@ -37,7 +37,7 @@ export default defineComponent({
       },
       {
         immediate: true,
-      }
+      },
     );
 
     return {

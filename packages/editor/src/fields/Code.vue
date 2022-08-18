@@ -11,7 +11,7 @@
 import { computed, defineComponent } from 'vue';
 
 export default defineComponent({
-  name: 'MFieldsVsCode',
+  name: 'm-fields-vs-code',
 
   props: ['model', 'name', 'config', 'prop'],
 

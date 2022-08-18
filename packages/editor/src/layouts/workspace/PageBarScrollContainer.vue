@@ -1,32 +1,15 @@
 <template>
-  <div ref="pageBar" class="m-editor-page-bar">
-    <div
-      id="m-editor-page-bar-add-icon"
-      class="m-editor-page-bar-item m-editor-page-bar-item-icon"
-      @click="addPage"
-    >
+  <div class="m-editor-page-bar" ref="pageBar">
+    <div id="m-editor-page-bar-add-icon" class="m-editor-page-bar-item m-editor-page-bar-item-icon" @click="addPage">
       <el-icon><plus></plus></el-icon>
     </div>
-    <div
-      v-if="canScroll"
-      class="m-editor-page-bar-item m-editor-page-bar-item-icon"
-      @click="scroll('left')"
-    >
+    <div v-if="canScroll" class="m-editor-page-bar-item m-editor-page-bar-item-icon" @click="scroll('left')">
       <el-icon><arrow-left-bold></arrow-left-bold></el-icon>
     </div>
-    <div
-      v-if="root"
-      ref="itemsContainer"
-      class="m-editor-page-bar-items"
-      :style="`width: ${itemsContainerWidth}px`"
-    >
+    <div v-if="root" class="m-editor-page-bar-items" ref="itemsContainer" :style="`width: ${itemsContainerWidth}px`">
       <slot></slot>
     </div>
-    <div
-      v-if="canScroll"
-      class="m-editor-page-bar-item m-editor-page-bar-item-icon"
-      @click="scroll('right')"
-    >
+    <div v-if="canScroll" class="m-editor-page-bar-item m-editor-page-bar-item-icon" @click="scroll('right')">
       <el-icon><arrow-right-bold></arrow-right-bold></el-icon>
     </div>
   </div>
@@ -114,7 +97,7 @@ watch(
         scroll('end');
       }
     });
-  }
+  },
 );
 
 const addPage = () => {

@@ -1,5 +1,5 @@
 <template>
-  <content-menu ref="menu" :menu-data="menuData" style="overflow: initial"></content-menu>
+  <content-menu :menu-data="menuData" ref="menu" style="overflow: initial"></content-menu>
 </template>
 
 <script lang="ts">
@@ -66,9 +66,9 @@ export default defineComponent({
                         direction: 'horizontal',
                       },
                     ]
-                  : []
+                  : [],
               ),
-            []
+            [],
           ) || []
         );
       }

@@ -1,16 +1,12 @@
 <template>
-  <div ref="workspace" class="m-editor-workspace" tabindex="1">
+  <div class="m-editor-workspace" tabindex="1" ref="workspace">
     <magic-stage :key="page?.id"></magic-stage>
 
     <slot name="workspace-content"></slot>
 
     <page-bar>
-      <template #page-bar-title="{ page }"
-        ><slot name="page-bar-title" :page="page"></slot
-      ></template>
-      <template #page-bar-popover="{ page }"
-        ><slot name="page-bar-popover" :page="page"></slot
-      ></template>
+      <template #page-bar-title="{ page }"><slot name="page-bar-title" :page="page"></slot></template>
+      <template #page-bar-popover="{ page }"><slot name="page-bar-popover" :page="page"></slot></template>
     </page-bar>
   </div>
 </template>
@@ -28,7 +24,7 @@ import PageBar from './PageBar.vue';
 import MagicStage from './Stage.vue';
 
 export default defineComponent({
-  name: 'MEditorWorkspace',
+  name: 'm-editor-workspace',
 
   components: {
     PageBar,

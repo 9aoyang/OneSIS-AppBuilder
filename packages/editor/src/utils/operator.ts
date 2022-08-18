@@ -63,7 +63,7 @@ export const beforePaste = async (position: PastePosition, config: MNode[]): Pro
         pasteConfig.name = generatePageNameByApp(editorService.get('root'));
       }
       return pasteConfig as MNode;
-    })
+    }),
   );
   return pasteConfigs;
 };
@@ -76,9 +76,7 @@ export const beforePaste = async (position: PastePosition, config: MNode[]): Pro
  */
 export const getPositionInContainer = (position: PastePosition = {}, id: Id) => {
   let { left = 0, top = 0 } = position;
-  const parentEl = editorService
-    .get<StageCore>('stage')
-    ?.renderer?.contentWindow?.document.getElementById(`${id}`);
+  const parentEl = editorService.get<StageCore>('stage')?.renderer?.contentWindow?.document.getElementById(`${id}`);
   const parentElRect = parentEl?.getBoundingClientRect();
   left = left - (parentElRect?.left || 0);
   top = top - (parentElRect?.top || 0);
@@ -88,11 +86,11 @@ export const getPositionInContainer = (position: PastePosition = {}, id: Id) => 
   };
 };
 
-export const getAddParent = (addNode: AddMNode | MNode[]) => {
+export const getAddParent = (node: MNode) => {
   const curNode = editorService.get<MContainer>('node');
 
   let parentNode;
-  if (!Array.isArray(addNode) && isPage(addNode as MNode)) {
+  if (isPage(node)) {
     parentNode = editorService.get<MApp>('root');
   } else if (curNode.items) {
     parentNode = curNode;

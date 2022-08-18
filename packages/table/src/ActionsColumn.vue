@@ -1,20 +1,20 @@
 <template>
   <el-table-column :label="config.label" :width="config.width" :fixed="config.fixed">
-    <template #default="scope">
+    <template v-slot="scope">
       <el-button
         v-for="(action, actionIndex) in config.actions"
         v-show="display(action.display, scope.row) && !editState[scope.$index]"
-        :key="actionIndex"
+        v-html="action.text"
         class="action-btn"
         text
         type="primary"
         size="small"
+        :key="actionIndex"
         @click="actionHandler(action, scope.row, scope.$index)"
-        v-html="action.text"
       ></el-button>
       <el-button
-        v-show="editState[scope.$index]"
         class="action-btn"
+        v-show="editState[scope.$index]"
         text
         type="primary"
         size="small"
@@ -22,8 +22,8 @@
         >保存</el-button
       >
       <el-button
-        v-show="editState[scope.$index]"
         class="action-btn"
+        v-show="editState[scope.$index]"
         text
         type="primary"
         size="small"
@@ -83,15 +83,11 @@ const success = (msg: string, action: ColumnActionConfig, row: any) => {
 const error = (msg: string) => ElMessage.error(msg);
 
 const deleteAction = async (action: ColumnActionConfig, row: any) => {
-  await ElMessageBox.confirm(
-    `确认删除${row[action.name || 'c_name']}(${row[props.rowkeyName]})?`,
-    '提示',
-    {
-      confirmButtonText: '确定',
-      cancelButtonText: '取消',
-      type: 'warning',
-    }
-  );
+  await ElMessageBox.confirm(`确认删除${row[action.name || 'c_name']}(${row[props.rowkeyName]})?`, '提示', {
+    confirmButtonText: '确定',
+    cancelButtonText: '取消',
+    type: 'warning',
+  });
 
   const res = await action.handler?.(row);
 

@@ -12,7 +12,7 @@ import { MButton, MButtonInstance, MText } from '../../../src/types';
 import useApp from '../../useApp';
 
 export default defineComponent({
-  name: 'MagicUiButton',
+  name: 'magic-ui-button',
   props: {
     config: {
       type: Object as PropType<MButton>,

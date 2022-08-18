@@ -1,10 +1,10 @@
 <template>
   <el-select
     v-if="model"
-    ref="select"
     v-model="model[name]"
     v-loading="loading"
     class="m-select"
+    ref="select"
     clearable
     filterable
     :popper-class="`m-select-popper ${popperClass}`"
@@ -19,11 +19,9 @@
     @change="changeHandler"
     @visible-change="visibleHandler"
   >
-    <template v-if="config.group"
-      ><select-option-groups :options="groupOptions"></select-option-groups
-    ></template>
+    <template v-if="config.group"><select-option-groups :options="groupOptions"></select-option-groups></template>
     <template v-else><select-options :options="options"></select-options></template>
-    <div v-if="moreLoadingVisible" v-loading="true"></div>
+    <div v-loading="true" v-if="moreLoadingVisible"></div>
   </el-select>
 </template>
 
@@ -39,7 +37,7 @@ import SelectOptionGroups from './SelectOptionGroups.vue';
 import SelectOptions from './SelectOptions.vue';
 
 export default defineComponent({
-  name: 'MFieldsSelect',
+  name: 'm-fields-select',
 
   components: { SelectOptions, SelectOptionGroups },
 
@@ -183,9 +181,7 @@ export default defineComponent({
         });
       }
 
-      return pgIndex.value === 0
-        ? (selectedOptions as any[]).concat(items)
-        : (options.value as any).concat(items);
+      return pgIndex.value === 0 ? (selectedOptions as any[]).concat(items) : (options.value as any).concat(items);
     };
 
     const getInitLocalOption = async () => {
@@ -200,21 +196,18 @@ export default defineComponent({
       if (config.group) {
         if (config.multiple && value.findIndex) {
           return (localOptions.value as SelectGroupOption[]).filter(
-            (group) =>
-              group.options.findIndex(
-                (item) => value.find((v: any) => equalValue(item.value, v)) > -1
-              ) > -1
+            (group) => group.options.findIndex((item) => value.find((v: any) => equalValue(item.value, v)) > -1) > -1,
           );
         }
 
         return (localOptions.value as SelectGroupOption[]).filter(
-          (group) => group.options.findIndex((item) => equalValue(item.value, value)) > -1
+          (group) => group.options.findIndex((item) => equalValue(item.value, value)) > -1,
         );
       }
 
       if (config.multiple && value.findIndex) {
         return (localOptions.value as any[]).filter(
-          (item) => value.findIndex((v: any) => equalValue(item.value, v)) > -1
+          (item) => value.findIndex((v: any) => equalValue(item.value, v)) > -1,
         );
       }
       return (localOptions.value as any[]).filter((item) => equalValue(item.value, value));
@@ -282,7 +275,7 @@ export default defineComponent({
                 formValues: mForm?.values,
                 formValue: mForm?.values,
                 config: props.config,
-              })
+              }),
             ).then((data) => {
               options.value = data;
             });
@@ -290,7 +283,7 @@ export default defineComponent({
         {
           deep: true,
           immediate: true,
-        }
+        },
       );
     } else if (Array.isArray(props.config.options)) {
       watch(
@@ -298,7 +291,7 @@ export default defineComponent({
         () => {
           options.value = props.config.options as SelectOption[] | SelectGroupOption[];
         },
-        { immediate: true }
+        { immediate: true },
       );
     } else if (props.config.option) {
       onBeforeMount(() => {
@@ -359,9 +352,7 @@ export default defineComponent({
           select.value.query = query.value;
           select.value.previousQuery = query.value;
           select.value.selectedLabel = query.value;
-        } else if (
-          options.value.length <= (props.config.multiple ? props.model?.[props.name].length : 1)
-        ) {
+        } else if (options.value.length <= (props.config.multiple ? props.model?.[props.name].length : 1)) {
           options.value = await getOptions();
         }
       },

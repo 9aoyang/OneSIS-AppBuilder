@@ -3,8 +3,8 @@
     v-if="model"
     v-model="model[n]"
     :size="size"
-    :active-value="activeValue"
-    :inactive-value="inactiveValue"
+    :activeValue="activeValue"
+    :inactiveValue="inactiveValue"
     :disabled="disabled"
     @change="changeHandler"
   ></el-switch>
@@ -17,7 +17,7 @@ import { SwitchConfig } from '../schema';
 import fieldProps from '../utils/fieldProps';
 import { useAddField } from '../utils/useAddField';
 export default defineComponent({
-  name: 'MFieldsSwitch',
+  name: 'm-fields-switch',
 
   props: {
     ...fieldProps,

@@ -54,18 +54,17 @@ if (props.model !== undefined) {
       },
       {
         immediate: true,
-      }
+      },
     );
   } else if (props.name && props.model[props.name]) {
     watch(
       () => props.model[props.name],
       (start, preStart) => {
-        if (start !== preStart)
-          value.value = start.map((item: string) => (item ? new Date(item) : undefined));
+        if (start !== preStart) value.value = start.map((item: string) => (item ? new Date(item) : undefined));
       },
       {
         immediate: true,
-      }
+      },
     );
   }
 }
@@ -92,7 +91,7 @@ const changeHandler = (v: Date[]) => {
       value.map((item?: Date) => {
         if (item) return datetimeFormatter(item, '');
         return undefined;
-      })
+      }),
     );
   } else {
     if (names?.length) {

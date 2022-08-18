@@ -1,36 +1,28 @@
 <template>
-  <div
-    ref="mTable"
-    class="m-fields-table"
-    :class="{ 'm-fields-table-item-extra': config.itemExtra }"
-  >
+  <div ref="mTable" class="m-fields-table" :class="{ 'm-fields-table-item-extra': config.itemExtra }">
     <span v-if="config.extra" style="color: rgba(0, 0, 0, 0.45)" v-html="config.extra"></span>
     <div class="el-form-item__content">
       <el-tooltip content="拖拽可排序" placement="left-start" :disabled="config.dropSort !== true">
         <el-table
           v-if="model[modelName]"
           ref="elTable"
-          :key="updateKey"
           style="width: 100%"
           :data="model[modelName]"
           :border="config.border"
           :max-height="config.maxHeight"
           :default-expand-all="true"
+          :key="updateKey"
           @select="selectHandle"
           @sort-change="sortChange"
         >
           <el-table-column v-if="config.itemExtra" :fixed="'left'" width="30" type="expand">
-            <template #default="scope">
-              <span class="m-form-tip" v-html="itemExtra(config.itemExtra, scope.$index)"></span>
+            <template v-slot="scope">
+              <span v-html="itemExtra(config.itemExtra, scope.$index)" class="m-form-tip"></span>
             </template>
           </el-table-column>
 
-          <el-table-column
-            label="操作"
-            width="60"
-            :fixed="config.fixed === false ? undefined : 'left'"
-          >
-            <template #default="scope">
+          <el-table-column label="操作" width="60" :fixed="config.fixed === false ? undefined : 'left'">
+            <template v-slot="scope">
               <el-button
                 v-show="showDelete(scope.$index + 1 + pagecontext * pagesize - 1)"
                 type="danger"
@@ -41,16 +33,12 @@
             </template>
           </el-table-column>
 
-          <el-table-column
-            v-if="sort && model[modelName] && model[modelName].length > 1"
-            label="排序"
-            width="60"
-          >
-            <template #default="scope">
+          <el-table-column v-if="sort && model[modelName] && model[modelName].length > 1" label="排序" width="60">
+            <template v-slot="scope">
               <el-tooltip
-                v-if="scope.$index + 1 + pagecontext * pagesize - 1 !== 0"
                 content="点击上移，双击置顶"
                 placement="top"
+                v-if="scope.$index + 1 + pagecontext * pagesize - 1 !== 0"
               >
                 <el-button
                   plain
@@ -63,9 +51,9 @@
                 ></el-button>
               </el-tooltip>
               <el-tooltip
-                v-if="scope.$index + 1 + pagecontext * pagesize - 1 !== model[modelName].length - 1"
                 content="点击下移，双击置底"
                 placement="top"
+                v-if="scope.$index + 1 + pagecontext * pagesize - 1 !== model[modelName].length - 1"
               >
                 <el-button
                   plain
@@ -89,24 +77,24 @@
           ></el-table-column>
 
           <el-table-column width="60" label="序号">
-            <template #default="scope">{{ scope.$index + 1 + pagecontext * pagesize }}</template>
+            <template v-slot="scope">{{ scope.$index + 1 + pagecontext * pagesize }}</template>
           </el-table-column>
 
           <template v-for="(column, index) in config.items">
             <el-table-column
               v-if="column.type !== 'hidden' && display(column.display)"
-              :key="column[mForm?.keyProp || '__key'] ?? index"
               :prop="column.name"
               :width="column.width"
               :label="column.label"
               :sortable="column.sortable"
               :sort-orders="['ascending', 'descending']"
+              :key="column[mForm?.keyProp || '__key'] ?? index"
               :class-name="config.dropSort === true ? 'el-table__column--dropable' : ''"
             >
               <template #default="scope">
                 <m-form-container
                   v-if="scope.$index > -1"
-                  label-width="0"
+                  labelWidth="0"
                   :prop="getProp(scope.$index)"
                   :rules="column.rules"
                   :config="makeConfig(column)"
@@ -120,24 +108,16 @@
         </el-table>
       </el-tooltip>
       <slot></slot>
-      <el-button v-if="addable" size="small" type="primary" plain @click="newHandler()"
-        >添加</el-button
-      >
-      &nbsp;
-      <el-button
-        v-if="enableToggleMode && !isFullscreen"
-        :icon="Grid"
-        size="small"
-        type="primary"
-        @click="toggleMode"
+      <el-button v-if="addable" size="small" type="primary" plain @click="newHandler()">添加</el-button> &nbsp;
+      <el-button :icon="Grid" size="small" type="primary" @click="toggleMode" v-if="enableToggleMode && !isFullscreen"
         >展开配置</el-button
       >
       <el-button
-        v-if="config.enableFullscreen !== false"
         :icon="FullScreen"
         size="small"
         type="primary"
         @click="toggleFullscreen"
+        v-if="config.enableFullscreen !== false"
       >
         {{ isFullscreen ? '退出全屏' : '全屏编辑' }}
       </el-button>
@@ -151,9 +131,7 @@
       >
         <el-button size="small" type="success" plain>导入EXCEL</el-button> </el-upload
       >&nbsp;
-      <el-button v-if="importable" size="small" type="warning" plain @click="clearHandler()"
-        >清空</el-button
-      >
+      <el-button v-if="importable" size="small" type="warning" plain @click="clearHandler()">清空</el-button>
     </div>
 
     <div class="bottom" style="text-align: right">
@@ -189,7 +167,7 @@ let loadedAMapJS = false; // 是否加载完js
 let firstLoadingAMapJS = true; // 否是第一次请求
 
 export default defineComponent({
-  name: 'MFormTable',
+  name: 'm-form-table',
 
   props: {
     name: {
@@ -258,13 +236,9 @@ export default defineComponent({
 
     const sortChange = ({ prop, order }: SortProp) => {
       if (order === 'ascending') {
-        props.model[modelName.value] = props.model[modelName.value].sort(
-          (a: any, b: any) => a[prop] - b[prop]
-        );
+        props.model[modelName.value] = props.model[modelName.value].sort((a: any, b: any) => a[prop] - b[prop]);
       } else if (order === 'descending') {
-        props.model[modelName.value] = props.model[modelName.value].sort(
-          (a: any, b: any) => b[prop] - a[prop]
-        );
+        props.model[modelName.value] = props.model[modelName.value].sort((a: any, b: any) => b[prop] - a[prop]);
       }
     };
 
@@ -277,7 +251,7 @@ export default defineComponent({
       [props.model[modelName.value][index1]] = props.model[modelName.value].splice(
         index2,
         1,
-        props.model[modelName.value][index1]
+        props.model[modelName.value][index1],
       );
       if (props.sortKey) {
         for (let i = props.model[modelName.value].length - 1, v = 0; i >= 0; i--, v++) {
@@ -419,9 +393,8 @@ export default defineComponent({
       data: computed(() =>
         props.model[modelName.value].filter(
           (item: any, index: number) =>
-            index >= pagecontext.value * pagesize.value &&
-            index + 1 <= (pagecontext.value + 1) * pagesize.value
-        )
+            index >= pagecontext.value * pagesize.value && index + 1 <= (pagecontext.value + 1) * pagesize.value,
+        ),
       ),
       addable: computed(() => {
         if (!props.model[modelName.value].length) {
@@ -574,9 +547,7 @@ export default defineComponent({
           const data = reader.result;
           const pdata = (globalThis as any).XLSX.read(data, { type: 'array' });
           pdata.SheetNames.forEach((sheetName: string) => {
-            const arr = (globalThis as any).XLSX.utils.sheet_to_json(pdata.Sheets[sheetName], {
-              header: 1,
-            });
+            const arr = (globalThis as any).XLSX.utils.sheet_to_json(pdata.Sheets[sheetName], { header: 1 });
             if (arr?.[0]) {
               arr.forEach((row: any) => {
                 newHandler(row);
@@ -638,9 +609,7 @@ export default defineComponent({
 
       getProp(index: number) {
         const { prop } = toRefs(props);
-        return `${prop.value}${prop.value ? '.' : ''}${
-          index + 1 + pagecontext.value * pagesize.value - 1
-        }`;
+        return `${prop.value}${prop.value ? '.' : ''}${index + 1 + pagecontext.value * pagesize.value - 1}`;
       },
     };
   },

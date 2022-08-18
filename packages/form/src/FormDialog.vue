@@ -5,19 +5,16 @@
       custom-class="m-form-dialog"
       top="20px"
       :title="title"
-      :append-to-body="true"
+      :appendToBody="true"
       :width="width"
       :fullscreen="fullscreen"
       :close-on-click-modal="false"
       @close="closeHandler"
     >
-      <div
-        class="m-dialog-body"
-        :style="`max-height: ${bodyHeight}; overflow-y: auto; overflow-x: hidden;`"
-      >
+      <div class="m-dialog-body" :style="`max-height: ${bodyHeight}; overflow-y: auto; overflow-x: hidden;`">
         <m-form
-          ref="form"
           v-model="stepActive"
+          ref="form"
           :size="size"
           :config="config"
           :init-values="values"
@@ -36,15 +33,9 @@
           </el-col>
           <el-col :span="12">
             <slot name="footer">
-              <el-button size="small" @click="cancel">取 消</el-button>
-              <el-button v-if="hasStep && stepActive > 1" type="info" size="small" @click="preStep"
-                >上一步</el-button
-              >
-              <el-button
-                v-if="hasStep && stepCount > stepActive"
-                type="info"
-                size="small"
-                @click="nextStep"
+              <el-button @click="cancel" size="small">取 消</el-button>
+              <el-button v-if="hasStep && stepActive > 1" type="info" size="small" @click="preStep">上一步</el-button>
+              <el-button v-if="hasStep && stepCount > stepActive" type="info" size="small" @click="nextStep"
                 >下一步</el-button
               >
               <el-button v-else type="primary" size="small" :loading="saveFetch" @click="save">{{
@@ -65,7 +56,7 @@ import Form from './Form.vue';
 import { FormConfig, StepConfig } from './schema';
 
 export default defineComponent({
-  name: 'MFormDialog',
+  name: 'm-form-dialog',
 
   props: {
     values: {

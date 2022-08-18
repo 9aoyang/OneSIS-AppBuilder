@@ -1,11 +1,6 @@
 <template>
-  <el-checkbox-group
-    v-model="model[name]"
-    :size="size"
-    :disabled="disabled"
-    @change="changeHandler"
-  >
-    <el-checkbox v-for="option in config.options" :key="option.value" :label="option.value"
+  <el-checkbox-group v-model="model[name]" :size="size" :disabled="disabled" @change="changeHandler">
+    <el-checkbox v-for="option in config.options" :label="option.value" :key="option.value"
       >{{ option.text }}
     </el-checkbox>
   </el-checkbox-group>
@@ -19,7 +14,7 @@ import fieldProps from '../utils/fieldProps';
 import { useAddField } from '../utils/useAddField';
 
 export default defineComponent({
-  name: 'MFieldsCheckboxGroup',
+  name: 'm-fields-checkbox-group',
 
   props: {
     ...fieldProps,

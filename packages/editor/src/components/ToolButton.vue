@@ -7,10 +7,7 @@
     @mousedown="mousedownHandler(item, $event)"
     @mouseup="mouseupHandler(item, $event)"
   >
-    <el-divider
-      v-if="item.type === 'divider'"
-      :direction="item.direction || 'vertical'"
-    ></el-divider>
+    <el-divider v-if="item.type === 'divider'" :direction="item.direction || 'vertical'"></el-divider>
     <div v-else-if="item.type === 'text'" class="menu-item-text">{{ item.text }}</div>
 
     <template v-else-if="item.type === 'zoom'">
@@ -26,15 +23,9 @@
     </template>
 
     <template v-else-if="item.type === 'button'">
-      <el-tooltip
-        v-if="item.tooltip"
-        effect="dark"
-        placement="bottom-start"
-        :content="item.tooltip"
-      >
+      <el-tooltip v-if="item.tooltip" effect="dark" placement="bottom-start" :content="item.tooltip">
         <el-button size="small" text :disabled="disabled"
-          ><m-icon v-if="item.icon" :icon="item.icon"></m-icon
-          ><span>{{ item.text }}</span></el-button
+          ><m-icon v-if="item.icon" :icon="item.icon"></m-icon><span>{{ item.text }}</span></el-button
         >
       </el-tooltip>
       <el-button v-else size="small" text :disabled="disabled"
@@ -42,47 +33,26 @@
       >
     </template>
 
-    <el-dropdown
-      v-else-if="item.type === 'dropdown'"
-      trigger="click"
-      :disabled="disabled"
-      @command="dropdownHandler"
-    >
+    <el-dropdown v-else-if="item.type === 'dropdown'" trigger="click" :disabled="disabled" @command="dropdownHandler">
       <span class="el-dropdown-link menubar-menu-button">
         {{ item.text }}<el-icon class="el-icon--right"><arrow-down></arrow-down></el-icon>
       </span>
       <template #dropdown>
         <el-dropdown-menu v-if="item.items && item.items.length">
-          <el-dropdown-item
-            v-for="(subItem, index) in item.items"
-            :key="index"
-            :command="{ item, subItem }"
-            >{{ subItem.text }}</el-dropdown-item
-          >
+          <el-dropdown-item v-for="(subItem, index) in item.items" :key="index" :command="{ item, subItem }">{{
+            subItem.text
+          }}</el-dropdown-item>
         </el-dropdown-menu>
       </template>
     </el-dropdown>
 
-    <component
-      v-bind="item.props || {}"
-      :is="item.component"
-      v-else-if="item.type === 'component'"
-    ></component>
+    <component v-else-if="item.type === 'component'" v-bind="item.props || {}" :is="item.component"></component>
   </div>
 </template>
 
 <script lang="ts" setup>
 import { computed, inject, markRaw, PropType } from 'vue';
-import {
-  ArrowDown,
-  Back,
-  Delete,
-  Grid,
-  Right,
-  ScaleToOriginal,
-  ZoomIn,
-  ZoomOut,
-} from '@element-plus/icons-vue';
+import { ArrowDown, Back, Delete, Grid, Right, ScaleToOriginal, ZoomIn, ZoomOut } from '@element-plus/icons-vue';
 
 import { NodeType } from '@tmagic/schema';
 

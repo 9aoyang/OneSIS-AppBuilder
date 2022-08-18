@@ -4,19 +4,18 @@
     class="m-fieldset"
     :style="show ? 'padding: 15px 15px 0 5px;' : 'border: 0'"
   >
-    <component :is="!show ? 'div' : 'legend'" v-if="name && config.checkbox">
+    <component v-if="name && config.checkbox" :is="!show ? 'div' : 'legend'">
       <el-checkbox
         v-model="model[name].value"
         :prop="`${prop}${prop ? '.' : ''}${config.name}.value`"
         :true-label="1"
         :false-label="0"
-        ><span v-html="config.legend"></span
-        ><span v-if="config.extra" class="m-form-tip" v-html="config.extra"></span
+        ><span v-html="config.legend"></span><span v-if="config.extra" v-html="config.extra" class="m-form-tip"></span
       ></el-checkbox>
     </component>
     <legend v-else>
       <span v-html="config.legend"></span>
-      <span v-if="config.extra" class="m-form-tip" v-html="config.extra"></span>
+      <span v-if="config.extra" v-html="config.extra" class="m-form-tip"></span>
     </legend>
 
     <div v-if="config.schematic && show" style="display: flex">
@@ -28,7 +27,7 @@
           :rules="name ? rules[name] : []"
           :config="item"
           :prop="prop"
-          :label-width="lWidth"
+          :labelWidth="lWidth"
           :size="size"
           @change="change"
         ></m-form-container>
@@ -45,7 +44,7 @@
         :rules="name ? rules[name] : []"
         :config="item"
         :prop="prop"
-        :label-width="lWidth"
+        :labelWidth="lWidth"
         :size="size"
         @change="change"
       ></m-form-container>
@@ -70,7 +69,7 @@ const props = withDefaults(
   {
     rules: {},
     prop: '',
-  }
+  },
 );
 
 const emit = defineEmits(['change']);
@@ -104,7 +103,7 @@ if (props.config.checkbox && name.value) {
     () => props.model[name.value]?.value,
     () => {
       emit('change', props.model);
-    }
+    },
   );
 }
 </script>

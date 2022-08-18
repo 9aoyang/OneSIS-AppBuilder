@@ -1,10 +1,6 @@
 <template>
-  <a v-if="config.href && !disabled" target="_blank" :href="href" :style="config.css || {}">{{
-    displayText
-  }}</a>
-  <span v-else-if="config.href && disabled" :style="config.disabledCss || {}">{{
-    displayText
-  }}</span>
+  <a v-if="config.href && !disabled" target="_blank" :href="href" :style="config.css || {}">{{ displayText }}</a>
+  <span v-else-if="config.href && disabled" :style="config.disabledCss || {}">{{ displayText }}</span>
   <div v-else class="m-fields-link">
     <el-button text type="primary" @click="editHandler">点击编辑</el-button>
     <m-form-dialog
@@ -13,7 +9,7 @@
       :width="config.formWidth"
       :values="formValue"
       :config="formConfig"
-      :parent-values="values"
+      :parentValues="values"
       :fullscreen="config.fullscreen"
       @submit="action"
     ></m-form-dialog>
@@ -29,7 +25,7 @@ import fieldProps from '../utils/fieldProps';
 import { useAddField } from '../utils/useAddField';
 
 export default defineComponent({
-  name: 'MFieldsLink',
+  name: 'm-fields-link',
 
   props: {
     ...fieldProps,

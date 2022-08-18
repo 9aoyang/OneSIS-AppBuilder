@@ -4,21 +4,21 @@
 
     <el-collapse class="ui-component-panel" :model-value="collapseValue">
       <el-input
-        v-model="searchText"
         prefix-icon="el-icon-search"
         placeholder="输入关键字进行过滤"
         class="search-input"
         size="small"
         clearable
+        v-model="searchText"
       />
       <template v-for="(group, index) in list">
         <el-collapse-item v-if="group.items && group.items.length" :key="index" :name="index">
           <template #title><i class="el-icon-s-grid"></i>{{ group.title }}</template>
           <div
-            v-for="item in group.items"
-            :key="item.type"
             class="component-item"
+            v-for="item in group.items"
             draggable="true"
+            :key="item.type"
             @click="appendComponent(item)"
             @dragstart="dragstartHandler(item, $event)"
             @dragend="dragendHandler"
@@ -47,7 +47,7 @@ import MIcon from '../../components/Icon.vue';
 import type { ComponentGroup, ComponentItem, Services, StageOptions } from '../../type';
 
 export default defineComponent({
-  name: 'UiComponentPanel',
+  name: 'ui-component-panel',
 
   components: { MIcon },
 
@@ -61,12 +61,12 @@ export default defineComponent({
       services?.componentListService.getList().map((group: ComponentGroup) => ({
         ...group,
         items: group.items.filter((item: ComponentItem) => item.text.includes(searchText.value)),
-      }))
+      })),
     );
     const collapseValue = computed(() =>
       Array(list.value?.length)
         .fill(1)
-        .map((x, i) => i)
+        .map((x, i) => i),
     );
 
     let timeout: NodeJS.Timeout | undefined;
@@ -95,7 +95,7 @@ export default defineComponent({
               name: text,
               type,
               ...data,
-            }).replace(/"(\w+)":\s/g, '$1: ')
+            }).replace(/"(\w+)":\s/g, '$1: '),
           );
         }
       },

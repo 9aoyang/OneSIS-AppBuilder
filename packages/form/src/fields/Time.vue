@@ -17,7 +17,7 @@ import fieldProps from '../utils/fieldProps';
 import { useAddField } from '../utils/useAddField';
 
 export default defineComponent({
-  name: 'MFieldsTime',
+  name: 'm-fields-time',
 
   props: {
     ...fieldProps,

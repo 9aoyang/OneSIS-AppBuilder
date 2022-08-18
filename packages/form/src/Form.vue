@@ -1,7 +1,7 @@
 <template>
   <el-form
-    ref="elForm"
     class="m-form"
+    ref="elForm"
     :model="values"
     :label-width="labelWidth"
     :disabled="disabled"
@@ -38,7 +38,7 @@ interface ValidateError {
 }
 
 export default defineComponent({
-  name: 'MForm',
+  name: 'm-form',
 
   props: {
     // 表单初始化值
@@ -154,7 +154,7 @@ export default defineComponent({
           initialized.value = true;
         });
       },
-      { immediate: true }
+      { immediate: true },
     );
 
     return {

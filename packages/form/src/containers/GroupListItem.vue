@@ -24,14 +24,14 @@
         ></el-button>
       </template>
 
-      <span v-if="itemExtra" class="m-form-tip" v-html="itemExtra"></span>
+      <span v-if="itemExtra" v-html="itemExtra" class="m-form-tip"></span>
     </div>
 
     <m-form-container
       v-if="expand"
       :config="rowConfig"
       :model="model"
-      :label-width="labelWidth"
+      :labelWidth="labelWidth"
       :prop="`${prop}${prop ? '.' : ''}${String(index)}`"
       :size="size"
       @change="changeHandler"
@@ -47,7 +47,7 @@ import { FormState, GroupListConfig } from '../schema';
 import { filterFunction } from '../utils/form';
 
 export default defineComponent({
-  name: 'MFormGroupListItem',
+  name: 'm-form-group-list-item',
 
   components: { CaretBottom, CaretRight, CaretTop },
 
@@ -94,9 +94,7 @@ export default defineComponent({
       span: props.config.span || 24,
       items: props.config.items,
       labelWidth: props.config.labelWidth,
-      [mForm?.keyProp || '__key']: `${props.config[mForm?.keyProp || '__key']}${String(
-        props.index
-      )}`,
+      [mForm?.keyProp || '__key']: `${props.config[mForm?.keyProp || '__key']}${String(props.index)}`,
     }));
 
     const title = computed(() => {
@@ -129,8 +127,7 @@ export default defineComponent({
     };
 
     // 调换顺序
-    const changeOrder = (offset = 0) =>
-      emit('swap-item', props.index, `${String(props.index)}${offset}`);
+    const changeOrder = (offset = 0) => emit('swap-item', props.index, `${String(props.index)}${offset}`);
 
     const movable = () => {
       const { movable } = props.config;

@@ -2,8 +2,8 @@
   <PageBarScrollContainer>
     <div
       v-for="item in (root && root.items) || []"
-      :key="item.key"
       class="m-editor-page-bar-item"
+      :key="item.key"
       :class="{ active: page?.id === item.id }"
       @click="switchPage(item)"
     >

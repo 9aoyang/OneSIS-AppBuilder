@@ -2,9 +2,9 @@
   <div class="`m-editor-props-panel">
     <slot name="props-panel-header"></slot>
     <m-form
-      ref="configForm"
       :class="`m-editor-props-panel ${propsPanelSize}`"
       :popper-class="`m-editor-props-panel-popper ${propsPanelSize}`"
+      ref="configForm"
       :size="propsPanelSize"
       :init-values="values"
       :config="curFormConfig"
@@ -14,15 +14,7 @@
 </template>
 
 <script lang="ts">
-import {
-  computed,
-  defineComponent,
-  getCurrentInstance,
-  inject,
-  onMounted,
-  ref,
-  watchEffect,
-} from 'vue';
+import { computed, defineComponent, getCurrentInstance, inject, onMounted, ref, watchEffect } from 'vue';
 import { ElMessage } from 'element-plus';
 
 import type { FormValue, MForm } from '@tmagic/form';
@@ -31,7 +23,7 @@ import type { MNode } from '@tmagic/schema';
 import type { Services } from '../type';
 
 export default defineComponent({
-  name: 'MEditorPropsPanel',
+  name: 'm-editor-props-panel',
 
   emits: ['mounted'],
 

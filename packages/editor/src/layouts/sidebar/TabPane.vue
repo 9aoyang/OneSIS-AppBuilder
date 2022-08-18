@@ -8,23 +8,17 @@
     </template>
 
     <component :is="config.component" v-bind="config.props || {}" v-on="config?.listeners || {}">
-      <template
-        v-if="data === 'component-list' || config.slots?.componentListPanelHeader"
-        #component-list-panel-header
-      >
+      <template #component-list-panel-header v-if="data === 'component-list' || config.slots?.componentListPanelHeader">
         <slot v-if="data === 'component-list'" name="component-list-panel-header"></slot>
-        <component
-          :is="config.slots.componentListPanelHeader"
-          v-else-if="config.slots?.componentListPanelHeader"
-        />
+        <component v-else-if="config.slots?.componentListPanelHeader" :is="config.slots.componentListPanelHeader" />
       </template>
 
-      <template v-if="data === 'layer' || config.slots?.layerPanelHeader" #layer-panel-header>
+      <template #layer-panel-header v-if="data === 'layer' || config.slots?.layerPanelHeader">
         <slot v-if="data === 'layer'" name="layer-panel-header"></slot>
-        <component :is="config.slots.layerPanelHeader" v-else-if="config.slots?.layerPanelHeader" />
+        <component v-else-if="config.slots?.layerPanelHeader" :is="config.slots.layerPanelHeader" />
       </template>
 
-      <template v-if="config.slots?.layerNodeContent" #layer-node-content="{ data, node }">
+      <template #layer-node-content="{ data, node }" v-if="config.slots?.layerNodeContent">
         <component :is="config.slots?.layerNodeContent" :data="data" :node="node" />
       </template>
     </component>

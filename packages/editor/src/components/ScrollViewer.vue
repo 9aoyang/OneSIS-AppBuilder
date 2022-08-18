@@ -1,5 +1,5 @@
 <template>
-  <div ref="container" class="m-editor-scroll-viewer-container">
+  <div class="m-editor-scroll-viewer-container" ref="container">
     <div ref="el" :style="style">
       <slot></slot>
     </div>
@@ -12,7 +12,7 @@ import { computed, defineComponent, onMounted, onUnmounted, ref, watch } from 'v
 import { ScrollViewer } from '../utils/scroll-viewer';
 
 export default defineComponent({
-  name: 'MEditorScrollViewer',
+  name: 'm-editor-scroll-viewer',
 
   props: {
     width: Number,
@@ -45,7 +45,7 @@ export default defineComponent({
       () => props.zoom,
       () => {
         scrollViewer.setZoom(props.zoom);
-      }
+      },
     );
 
     return {
@@ -58,7 +58,7 @@ export default defineComponent({
         height: ${props.height}px;
         position: absolute;
         margin-top: 30px;
-      `
+      `,
       ),
     };
   },

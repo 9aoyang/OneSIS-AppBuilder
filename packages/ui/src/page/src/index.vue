@@ -5,11 +5,7 @@
     :style="style"
   >
     <slot></slot>
-    <magic-ui-component
-      v-for="item in config.items"
-      :key="item.id"
-      :config="item"
-    ></magic-ui-component>
+    <magic-ui-component v-for="item in config.items" :key="item.id" :config="item"></magic-ui-component>
   </div>
 </template>
 
@@ -22,7 +18,7 @@ import Component from '../../Component.vue';
 import useApp from '../../useApp';
 
 export default defineComponent({
-  name: 'MagicUiPage',
+  name: 'magic-ui-page',
 
   components: {
     'magic-ui-component': Component,

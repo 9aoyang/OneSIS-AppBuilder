@@ -1,14 +1,14 @@
 <template>
   <scroll-viewer
-    ref="stageWrap"
     class="m-editor-stage"
+    ref="stageWrap"
     :width="stageRect?.width"
     :height="stageRect?.height"
     :zoom="zoom"
   >
     <div
-      ref="stageContainer"
       class="m-editor-stage-container"
+      ref="stageContainer"
       :style="`transform: scale(${zoom})`"
       @contextmenu="contextmenuHandler"
       @drop="dropHandler"
@@ -21,17 +21,7 @@
 </template>
 
 <script lang="ts" setup>
-import {
-  computed,
-  inject,
-  markRaw,
-  onMounted,
-  onUnmounted,
-  ref,
-  toRaw,
-  watch,
-  watchEffect,
-} from 'vue';
+import { computed, inject, markRaw, onMounted, onUnmounted, ref, toRaw, watch, watchEffect } from 'vue';
 import { cloneDeep } from 'lodash-es';
 
 import type { MApp, MContainer, MNode, MPage } from '@tmagic/schema';
@@ -130,10 +120,7 @@ watchEffect(() => {
   stage?.on('update', (ev: UpdateEventData) => {
     if (ev.parentEl) {
       for (const data of ev.data) {
-        services?.editorService.moveToContainer(
-          { id: data.el.id, style: data.style },
-          ev.parentEl.id
-        );
+        services?.editorService.moveToContainer({ id: data.el.id, style: data.style }, ev.parentEl.id);
       }
       return;
     }
@@ -151,7 +138,7 @@ watchEffect(() => {
     if (!root.value || !page.value) return;
 
     const storageKey = getGuideLineKey(
-      e.type === GuidesType.HORIZONTAL ? H_GUIDE_LINE_STORAGE_KEY : V_GUIDE_LINE_STORAGE_KEY
+      e.type === GuidesType.HORIZONTAL ? H_GUIDE_LINE_STORAGE_KEY : V_GUIDE_LINE_STORAGE_KEY,
     );
     if (e.guides.length) {
       globalThis.localStorage.setItem(storageKey, JSON.stringify(e.guides));
@@ -218,9 +205,7 @@ const dropHandler = async (e: DragEvent) => {
   e.preventDefault();
 
   const doc = stage?.renderer.contentWindow?.document;
-  const parentEl: HTMLElement | null | undefined = doc?.querySelector(
-    `.${stageOptions?.containerHighlightClassName}`
-  );
+  const parentEl: HTMLElement | null | undefined = doc?.querySelector(`.${stageOptions?.containerHighlightClassName}`);
 
   let parent: MContainer | undefined = page.value;
   if (parentEl) {

@@ -1,14 +1,6 @@
 <template>
-  <el-radio-group
-    v-if="model"
-    v-model="model[name]"
-    :size="size"
-    :disabled="disabled"
-    @change="changeHandler"
-  >
-    <el-radio v-for="option in config.options" :key="option.value" :label="option.value">{{
-      option.text
-    }}</el-radio>
+  <el-radio-group v-if="model" v-model="model[name]" :size="size" :disabled="disabled" @change="changeHandler">
+    <el-radio v-for="option in config.options" :label="option.value" :key="option.value">{{ option.text }}</el-radio>
   </el-radio-group>
 </template>
 
@@ -19,7 +11,7 @@ import fieldProps from '../utils/fieldProps';
 import { useAddField } from '../utils/useAddField';
 
 export default defineComponent({
-  name: 'MFieldsRadioGroup',
+  name: 'm-fields-radio-group',
 
   props: {
     ...fieldProps,

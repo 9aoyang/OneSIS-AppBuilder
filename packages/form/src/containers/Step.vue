@@ -34,7 +34,7 @@ import { defineComponent, inject, PropType, ref, watchEffect } from 'vue';
 import { FormState, StepConfig } from '../schema';
 
 export default defineComponent({
-  name: 'MFormStep',
+  name: 'm-form-step',
 
   props: {
     model: {

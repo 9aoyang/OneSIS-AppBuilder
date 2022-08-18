@@ -1,24 +1,19 @@
 <template>
-  <div
-    v-if="menuData.length && visible"
-    ref="menu"
-    class="magic-editor-content-menu"
-    :style="menuStyle"
-  >
+  <div v-if="menuData.length && visible" class="magic-editor-content-menu" ref="menu" :style="menuStyle">
     <div>
       <tool-button
         v-for="(item, index) in menuData"
-        :key="index"
         event-type="mouseup"
         :data="item"
+        :key="index"
         @mouseup="hide"
         @mouseenter="showSubMenu(item)"
       ></tool-button>
     </div>
     <teleport to="body">
       <content-menu
-        ref="subMenu"
         class="sub-menu"
+        ref="subMenu"
         :menu-data="subMenuData"
         :is-sub-menu="true"
         @hide="hide"
@@ -42,7 +37,7 @@ const props = withDefaults(
   {
     menuData: () => [],
     isSubMenu: false,
-  }
+  },
 );
 
 const emit = defineEmits(['hide', 'show']);

@@ -1,11 +1,7 @@
 <template>
   <div class="m-fields-dynamic-field">
     <el-form size="small">
-      <el-form-item
-        v-for="key in Object.keys(fieldMap.value)"
-        :key="key"
-        :label="fieldLabelMap.value[key]"
-      >
+      <el-form-item v-for="key in Object.keys(fieldMap.value)" :key="key" :label="fieldLabelMap.value[key]">
         <el-input
           v-model="fieldMap.value[key]"
           :placeholder="fieldLabelMap.value[key]"
@@ -35,7 +31,7 @@ import fieldProps from '../utils/fieldProps';
 import { useAddField } from '../utils/useAddField';
 
 export default defineComponent({
-  name: 'MFieldsDynamicField',
+  name: 'm-fields-dynamic-field',
 
   props: {
     ...fieldProps,
@@ -84,7 +80,7 @@ export default defineComponent({
       },
       {
         immediate: true,
-      }
+      },
     );
 
     onBeforeUnmount(() => {

@@ -1,12 +1,7 @@
 <template>
   <div class="m-editor-nav-menu" :style="{ height: `${height}px` }">
-    <div
-      v-for="key in keys"
-      :key="key"
-      :class="`menu-${key}`"
-      :style="`width: ${columnWidth?.[key]}px`"
-    >
-      <tool-button v-for="(item, index) in data[key]" :key="index" :data="item"></tool-button>
+    <div v-for="key in keys" :class="`menu-${key}`" :key="key" :style="`width: ${columnWidth?.[key]}px`">
+      <tool-button :data="item" v-for="(item, index) in data[key]" :key="index"></tool-button>
     </div>
   </div>
 </template>
@@ -18,7 +13,7 @@ import ToolButton from '../components/ToolButton.vue';
 import { GetColumnWidth, MenuBarData, Services } from '../type';
 
 export default defineComponent({
-  name: 'NavMenu',
+  name: 'nav-menu',
 
   components: { ToolButton },
 

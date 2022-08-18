@@ -1,17 +1,17 @@
 <template>
   <el-tabs
     v-if="data.type === 'tabs' && data.items.length"
-    v-model="activeTabName"
     class="m-editor-sidebar"
+    v-model="activeTabName"
     type="card"
     tab-position="left"
   >
     <tab-pane v-for="(item, index) in data.items" :key="index" :data="item">
-      <template v-if="item === 'layer'" #layer-panel-header>
+      <template #layer-panel-header v-if="item === 'layer'">
         <slot name="layer-panel-header"></slot>
       </template>
 
-      <template v-if="item === 'component-list'" #component-list-panel-header>
+      <template #component-list-panel-header v-if="item === 'component-list'">
         <slot name="component-list-panel-header"></slot>
       </template>
     </tab-pane>
@@ -26,8 +26,9 @@ import { SideBarData } from '../../type';
 import TabPane from './TabPane.vue';
 
 export default defineComponent({
-  name: 'MSidebar',
   components: { TabPane },
+
+  name: 'm-sidebar',
 
   props: {
     data: {
@@ -43,7 +44,7 @@ export default defineComponent({
       () => props.data?.status,
       (status) => {
         activeTabName.value = status || '0';
-      }
+      },
     );
 
     return {

@@ -10,7 +10,7 @@
       @save="saveCode"
     ></magic-code-editor>
 
-    <div v-else class="m-editor-content">
+    <div class="m-editor-content" v-else>
       <div class="m-editor-framework-left" :style="`width: ${columnWidth?.left}px`">
         <slot name="sidebar"></slot>
       </div>

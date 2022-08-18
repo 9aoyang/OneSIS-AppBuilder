@@ -15,10 +15,10 @@
     ></m-fields-hidden>
 
     <component
-      :is="tagName"
       v-else-if="items && !config.text && type && display"
       :key="key(config)"
       :size="size"
+      :is="tagName"
       :model="model"
       :config="config"
       :name="name"
@@ -40,9 +40,9 @@
         <template #label><span v-html="type === 'checkbox' ? '' : config.text"></span></template>
         <el-tooltip v-if="tooltip">
           <component
-            :is="tagName"
             :key="key(config)"
             :size="size"
+            :is="tagName"
             :model="model"
             :config="config"
             :name="name"
@@ -56,10 +56,10 @@
         </el-tooltip>
 
         <component
-          :is="tagName"
           v-else
           :key="key(config)"
           :size="size"
+          :is="tagName"
           :model="model"
           :config="config"
           :name="name"
@@ -68,7 +68,7 @@
           @change="onChangeHandler"
         ></component>
 
-        <div v-if="extra" class="m-form-tip" v-html="extra"></div>
+        <div v-if="extra" v-html="extra" class="m-form-tip"></div>
       </el-form-item>
 
       <el-tooltip v-if="config.tip" placement="left">
@@ -96,29 +96,21 @@
       </template>
     </template>
 
-    <div v-if="config.expand && type !== 'fieldset'" style="text-align: center">
+    <div style="text-align: center" v-if="config.expand && type !== 'fieldset'">
       <el-button text @click="expandHandler">{{ expand ? '收起配置' : '展开更多配置' }}</el-button>
     </div>
   </div>
 </template>
 
 <script lang="ts">
-import {
-  computed,
-  defineComponent,
-  inject,
-  PropType,
-  ref,
-  resolveComponent,
-  watchEffect,
-} from 'vue';
+import { computed, defineComponent, inject, PropType, ref, resolveComponent, watchEffect } from 'vue';
 import { WarningFilled } from '@element-plus/icons-vue';
 
 import { ChildConfig, ContainerCommonConfig, FormState, FormValue } from '../schema';
 import { display as displayFunction, filterFunction, getRules } from '../utils/form';
 
 export default defineComponent({
-  name: 'MFormContainer',
+  name: 'm-form-container',
 
   components: { WarningFilled },
 
@@ -267,11 +259,7 @@ export default defineComponent({
       }
 
       // field内容下包含field-link时，model===value, 这里避免循环引用
-      if (
-        (name || name === 0) &&
-        props.model !== value &&
-        (v !== value || props.model[name] !== value)
-      ) {
+      if ((name || name === 0) && props.model !== value && (v !== value || props.model[name] !== value)) {
         // eslint-disable-next-line vue/no-mutating-props
         props.model[name] = value;
       }

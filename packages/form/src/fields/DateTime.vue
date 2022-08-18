@@ -23,7 +23,7 @@ import fieldProps from '../utils/fieldProps';
 import { useAddField } from '../utils/useAddField';
 
 export default defineComponent({
-  name: 'MFieldsDatetime',
+  name: 'm-fields-datetime',
 
   props: {
     ...fieldProps,
@@ -43,11 +43,7 @@ export default defineComponent({
       if (value === 'Invalid Date') {
         props.model[props.name] = '';
       } else {
-        props.model[props.name] = datetimeFormatter(
-          props.model[props.name],
-          '',
-          props.config.valueFormat
-        );
+        props.model[props.name] = datetimeFormatter(props.model[props.name], '', props.config.valueFormat);
       }
     }
 

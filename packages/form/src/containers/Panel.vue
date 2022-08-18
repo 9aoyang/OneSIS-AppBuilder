@@ -7,9 +7,8 @@
     <template #header>
       <div class="clearfix">
         <a href="javascript:" style="width: 100%; display: block" @click="expand = !expand">
-          <el-icon><caret-bottom v-if="expand" /><caret-right v-else /></el-icon>
-          {{ filter(config.title) }}
-          <span v-if="config && config.extra" class="m-form-tip" v-html="config.extra"></span>
+          <el-icon><caret-bottom v-if="expand" /><caret-right v-else /></el-icon> {{ filter(config.title) }}
+          <span v-if="config && config.extra" v-html="config.extra" class="m-form-tip"></span>
         </a>
       </div>
     </template>
@@ -58,7 +57,7 @@ import { FormState, PanelConfig } from '../schema';
 import { filterFunction } from '../utils/form';
 
 export default defineComponent({
-  name: 'MFormPanel',
+  name: 'm-form-panel',
 
   components: { CaretBottom, CaretRight },
 

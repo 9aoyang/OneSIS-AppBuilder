@@ -3,7 +3,7 @@
     v-model="model[name]"
     :size="size"
     :disabled="disabled"
-    :show-alpha="true"
+    :showAlpha="true"
     @change="changeHandler"
   ></el-color-picker>
 </template>

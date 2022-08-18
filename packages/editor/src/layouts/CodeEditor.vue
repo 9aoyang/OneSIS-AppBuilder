@@ -25,7 +25,7 @@ const toString = (v: string | any, language: string): string => {
 };
 
 export default defineComponent({
-  name: 'MagicCodeEditor',
+  name: 'magic-code-editor',
 
   props: {
     initValues: {
@@ -66,7 +66,7 @@ export default defineComponent({
       throttle((): void => {
         vsEditor?.layout();
         vsDiffEditor?.layout();
-      }, 300)
+      }, 300),
     );
 
     const setEditorValue = (v: string | any, m: string | any) => {
@@ -74,10 +74,7 @@ export default defineComponent({
 
       if (props.type === 'diff') {
         const originalModel = monaco.editor.createModel(values.value, 'text/javascript');
-        const modifiedModel = monaco.editor.createModel(
-          toString(m, props.language),
-          'text/javascript'
-        );
+        const modifiedModel = monaco.editor.createModel(toString(m, props.language), 'text/javascript');
 
         return vsDiffEditor?.setModel({
           original: originalModel,
@@ -140,7 +137,7 @@ export default defineComponent({
       {
         deep: true,
         immediate: true,
-      }
+      },
     );
 
     onMounted(async () => {

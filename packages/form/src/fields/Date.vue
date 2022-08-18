@@ -21,7 +21,7 @@ import fieldProps from '../utils/fieldProps';
 import { useAddField } from '../utils/useAddField';
 
 export default defineComponent({
-  name: 'MFieldsDate',
+  name: 'm-fields-date',
 
   props: {
     ...fieldProps,

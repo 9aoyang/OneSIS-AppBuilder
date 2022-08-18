@@ -1,5 +1,5 @@
 <template>
-  <content-menu ref="menu" :menu-data="menuData"></content-menu>
+  <content-menu :menu-data="menuData" ref="menu"></content-menu>
 </template>
 
 <script lang="ts" setup>
@@ -140,11 +140,11 @@ watch(
     const layout = await editorService.getLayout(parent.value);
     const isLayoutConform = [Layout.ABSOLUTE, Layout.FIXED].includes(layout);
     const isTypeConform = nodes.value?.every(
-      (selectedNode) => ![NodeType.ROOT, NodeType.PAGE, 'pop'].includes(`${selectedNode?.type}`)
+      (selectedNode) => ![NodeType.ROOT, NodeType.PAGE, 'pop'].includes(`${selectedNode?.type}`),
     );
     canCenter.value = isLayoutConform && !!isTypeConform;
   },
-  { immediate: true }
+  { immediate: true },
 );
 
 const show = async (e: MouseEvent) => {

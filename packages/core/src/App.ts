@@ -163,9 +163,6 @@ class App extends EventEmitter {
   }
 
   public registerComponent(type: string, Component: any) {
-    if (type === 'demo') {
-      console.log(Component);
-    }
     this.components.set(type, Component);
   }
 

@@ -1,7 +1,7 @@
 <template>
   <component
-    :is="tagName"
     v-if="display()"
+    :is="tagName"
     :id="config.id"
     :class="`magic-ui-component${config.className ? ` ${config.className}` : ''}`"
     :style="style"
@@ -17,7 +17,7 @@ import { MComponent } from '@tmagic/schema';
 import { toLine } from '@tmagic/utils';
 
 export default defineComponent({
-  name: 'MagicUiComponent',
+  name: 'magic-ui-component',
 
   props: {
     config: {

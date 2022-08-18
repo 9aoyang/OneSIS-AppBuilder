@@ -1,22 +1,13 @@
 <template>
-  <div v-if="uiSelectMode" class="m-fields-ui-select" @click="cancelHandler">
+  <div class="m-fields-ui-select" v-if="uiSelectMode" @click="cancelHandler">
     <el-button type="danger" :icon="Delete" text style="padding: 0">取消</el-button>
   </div>
-  <div v-else class="m-fields-ui-select" style="display: flex" @click="startSelect">
+  <div class="m-fields-ui-select" v-else @click="startSelect" style="display: flex">
     <el-tooltip content="清除">
-      <el-button
-        v-if="val"
-        style="padding: 0"
-        type="danger"
-        :icon="Close"
-        text
-        @click.stop="deleteHandler"
-      ></el-button>
+      <el-button v-if="val" style="padding: 0" type="danger" :icon="Close" text @click.stop="deleteHandler"></el-button>
     </el-tooltip>
     <el-tooltip :content="val ? toName + '_' + val : '点击此处选择'">
-      <el-button text style="padding: 0; margin: 0">{{
-        val ? toName + '_' + val : '点击此处选择'
-      }}</el-button>
+      <el-button text style="padding: 0; margin: 0">{{ val ? toName + '_' + val : '点击此处选择' }}</el-button>
     </el-tooltip>
   </div>
 </template>

@@ -1,11 +1,11 @@
 <template>
   <el-table
-    ref="table"
     :data="tableData"
     :show-header="showHeader"
     :max-height="bodyHeight"
     tooltip-effect="dark"
     class="m-table"
+    ref="table"
     :default-expand-all="defaultExpandAll"
     :border="hasBorder"
     :row-key="rowkeyName || 'c_id'"
@@ -19,25 +19,20 @@
   >
     <template v-for="(item, columnIndex) in columns">
       <template v-if="item.type === 'expand'">
-        <expand-column :key="columnIndex" :config="item"></expand-column>
+        <expand-column :config="item" :key="columnIndex"></expand-column>
       </template>
 
       <template v-else-if="item.selection">
-        <el-table-column
-          :key="columnIndex"
-          type="selection"
-          width="40"
-          :selectable="item.selectable"
-        ></el-table-column>
+        <el-table-column type="selection" :key="columnIndex" width="40" :selectable="item.selectable"></el-table-column>
       </template>
 
       <template v-else-if="item.actions">
         <actions-column
-          :key="columnIndex"
           :columns="columns"
           :config="item"
           :rowkey-name="rowkeyName"
           :edit-state="editState"
+          :key="columnIndex"
           @afterAction="$emit('afterAction')"
         ></actions-column>
       </template>
@@ -64,7 +59,7 @@ import PopoverColumn from './PopoverColumn.vue';
 import TextColumn from './TextColumn.vue';
 
 export default defineComponent({
-  name: 'MTable',
+  name: 'm-table',
 
   components: { ExpandColumn, ActionsColumn, PopoverColumn, TextColumn },
 

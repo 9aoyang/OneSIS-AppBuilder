@@ -5,8 +5,8 @@
       :key="col[mForm?.keyProp || '__key'] ?? index"
       :span="col.span || config.span || 24 / config.items.length"
       :config="col"
-      :label-width="config.labelWidth || labelWidth"
-      :expand-more="expandMore"
+      :labelWidth="config.labelWidth || labelWidth"
+      :expandMore="expandMore"
       :model="name ? model[name] : model"
       :prop="prop"
       :size="size"
@@ -23,7 +23,7 @@ import { FormState, RowConfig } from '../schema';
 import Col from './Col.vue';
 
 export default defineComponent({
-  name: 'MFormRow',
+  name: 'm-form-row',
 
   components: { Col },
 

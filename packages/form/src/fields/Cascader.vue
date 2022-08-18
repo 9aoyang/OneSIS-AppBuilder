@@ -1,8 +1,8 @@
 <template>
   <div class="m-cascader" style="width: 100%">
     <el-cascader
-      ref="cascader"
       v-model="model[name]"
+      ref="cascader"
       style="width: 100%"
       clearable
       filterable
@@ -34,7 +34,7 @@ import fieldProps from '../utils/fieldProps';
 import { useAddField } from '../utils/useAddField';
 
 export default defineComponent({
-  name: 'MFieldsCascader',
+  name: 'm-fields-cascader',
 
   props: {
     ...fieldProps,
@@ -97,10 +97,7 @@ export default defineComponent({
     if (typeof props.config.options === 'function' && props.model && mForm) {
       watchEffect(
         () =>
-          (options.value = (props.config.options as Function)(vm, {
-            model: props.model,
-            formValues: mForm.values,
-          }))
+          (options.value = (props.config.options as Function)(vm, { model: props.model, formValues: mForm.values })),
       );
     } else if (!props.config.options || !props.config.options.length || props.config.remote) {
       Promise.resolve(setRemoteOptions());

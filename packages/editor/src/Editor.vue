@@ -21,25 +21,16 @@
     <template #workspace>
       <slot name="workspace" :editorService="editorService">
         <workspace>
-          <template #workspace-content
-            ><slot name="workspace-content" :editorService="editorService"></slot
-          ></template>
-          <template #page-bar-title="{ page }"
-            ><slot name="page-bar-title" :page="page"></slot
-          ></template>
-          <template #page-bar-popover="{ page }"
-            ><slot name="page-bar-popover" :page="page"></slot
-          ></template>
+          <template #workspace-content><slot name="workspace-content" :editorService="editorService"></slot></template>
+          <template #page-bar-title="{ page }"><slot name="page-bar-title" :page="page"></slot></template>
+          <template #page-bar-popover="{ page }"><slot name="page-bar-popover" :page="page"></slot></template>
         </workspace>
       </slot>
     </template>
 
     <template #props-panel>
       <slot name="props-panel">
-        <props-panel
-          ref="propsPanel"
-          @mounted="(instance: any) => $emit('props-panel-mounted', instance)"
-        >
+        <props-panel ref="propsPanel" @mounted="(instance: any) => $emit('props-panel-mounted', instance)">
           <template #props-panel-header>
             <slot name="props-panel-header"></slot>
           </template>
@@ -72,17 +63,10 @@ import historyService from './services/history';
 import propsService from './services/props';
 import storageService from './services/storage';
 import uiService from './services/ui';
-import type {
-  ComponentGroup,
-  MenuBarData,
-  MenuItem,
-  Services,
-  SideBarData,
-  StageRect,
-} from './type';
+import type { ComponentGroup, MenuBarData, MenuItem, Services, SideBarData, StageRect } from './type';
 
 export default defineComponent({
-  name: 'MEditor',
+  name: 'm-editor',
 
   components: {
     NavMenu,
@@ -158,9 +142,7 @@ export default defineComponent({
 
     /** 画布中组件选中框的移动范围 */
     moveableOptions: {
-      type: [Object, Function] as PropType<
-        MoveableOptions | ((core?: StageCore) => MoveableOptions)
-      >,
+      type: [Object, Function] as PropType<MoveableOptions | ((core?: StageCore) => MoveableOptions)>,
     },
 
     /** 编辑器初始化时默认选中的组件ID */
@@ -222,7 +204,7 @@ export default defineComponent({
       (modelValue) => editorService.set('root', modelValue),
       {
         immediate: true,
-      }
+      },
     );
 
     watch(
@@ -230,7 +212,7 @@ export default defineComponent({
       (componentGroupList) => componentListService.setList(componentGroupList),
       {
         immediate: true,
-      }
+      },
     );
 
     watch(
@@ -238,7 +220,7 @@ export default defineComponent({
       (configs) => propsService.setPropsConfigs(configs),
       {
         immediate: true,
-      }
+      },
     );
 
     watch(
@@ -246,7 +228,7 @@ export default defineComponent({
       (values) => propsService.setPropsValues(values),
       {
         immediate: true,
-      }
+      },
     );
 
     watch(
@@ -265,7 +247,7 @@ export default defineComponent({
       },
       {
         immediate: true,
-      }
+      },
     );
 
     watch(
@@ -273,7 +255,7 @@ export default defineComponent({
       (defaultSelected) => defaultSelected && editorService.select(defaultSelected),
       {
         immediate: true,
-      }
+      },
     );
 
     watch(
@@ -281,7 +263,7 @@ export default defineComponent({
       (stageRect) => stageRect && uiService.set('stageRect', stageRect),
       {
         immediate: true,
-      }
+      },
     );
 
     onUnmounted(() => editorService.destroy());
@@ -313,7 +295,7 @@ export default defineComponent({
         containerHighlightClassName: props.containerHighlightClassName,
         containerHighlightDuration: props.containerHighlightDuration,
         containerHighlightType: props.containerHighlightType,
-      })
+      }),
     );
 
     return services;

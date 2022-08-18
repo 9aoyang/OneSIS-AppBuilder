@@ -2,8 +2,8 @@
   <el-checkbox
     v-model="model[name]"
     :size="size"
-    :true-label="activeValue"
-    :false-label="inactiveValue"
+    :trueLabel="activeValue"
+    :falseLabel="inactiveValue"
     :disabled="disabled"
     :label="config.text"
     @change="changeHandler"
@@ -18,7 +18,7 @@ import fieldProps from '../utils/fieldProps';
 import { useAddField } from '../utils/useAddField';
 
 export default defineComponent({
-  name: 'MFieldsCheckbox',
+  name: 'm-fields-checkbox',
 
   props: {
     ...fieldProps,

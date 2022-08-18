@@ -7,12 +7,8 @@
     :sortable="config.sortable"
     :prop="config.prop"
   >
-    <template #default="scope">
-      <el-form
-        v-if="config.type && editState[scope.$index]"
-        label-width="0"
-        :model="editState[scope.$index]"
-      >
+    <template v-slot="scope">
+      <el-form v-if="config.type && editState[scope.$index]" label-width="0" :model="editState[scope.$index]">
         <m-form-container
           :prop="config.prop"
           :rules="config.rules"
@@ -22,12 +18,7 @@
         ></m-form-container>
       </el-form>
 
-      <el-button
-        v-else-if="config.action === 'actionLink'"
-        text
-        type="primary"
-        @click="config.handler(scope.row)"
-      >
+      <el-button v-else-if="config.action === 'actionLink'" text type="primary" @click="config.handler(scope.row)">
         {{ formatter(config, scope.row) }}
       </el-button>
 
@@ -35,13 +26,9 @@
         ><img :src="scope.row[config.prop]" height="50"
       /></a>
 
-      <a
-        v-else-if="config.action === 'link'"
-        target="_blank"
-        :href="scope.row[config.prop]"
-        class="keep-all"
-        >{{ scope.row[config.prop] }}</a
-      >
+      <a v-else-if="config.action === 'link'" target="_blank" :href="scope.row[config.prop]" class="keep-all">{{
+        scope.row[config.prop]
+      }}</a>
 
       <el-tooltip v-else-if="config.action === 'tip'" placement="left">
         <template #content>
@@ -52,11 +39,7 @@
 
       <el-tag
         v-else-if="config.action === 'tag'"
-        :type="
-          typeof config.type === 'function'
-            ? config.type(scope.row[config.prop], scope.row)
-            : config.type
-        "
+        :type="typeof config.type === 'function' ? config.type(scope.row[config.prop], scope.row) : config.type"
         close-transition
         >{{ formatter(config, scope.row) }}</el-tag
       >

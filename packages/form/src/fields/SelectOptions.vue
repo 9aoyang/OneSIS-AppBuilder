@@ -1,9 +1,9 @@
 <template>
   <el-option
     v-for="option in options"
-    :key="valueKey ? option.value[valueKey] : option.value"
     :label="option.text"
     :value="option.value"
+    :key="valueKey ? option.value[valueKey] : option.value"
     :disabled="option.disabled"
   ></el-option>
 </template>

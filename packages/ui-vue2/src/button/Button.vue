@@ -13,7 +13,7 @@ import type { MComponent } from '@tmagic/schema';
 import useApp from '../useApp';
 
 export default defineComponent({
-  name: 'MagicUiButton',
+  name: 'magic-ui-button',
   props: {
     config: {
       type: Object as PropType<MComponent>,

@@ -35,9 +35,7 @@ export const cli = (defaultAppConfig: UserConfig): void => {
   program.help();
 
   // register `dev` command
-  program
-    .command('entry', 'Start development server')
-    .action(wrapCommand(scripts(defaultAppConfig)));
+  program.command('entry', 'Start development server').action(wrapCommand(scripts(defaultAppConfig)));
 
   // register `info` command
   program.command('info', 'Display environment information').action(wrapCommand(info));

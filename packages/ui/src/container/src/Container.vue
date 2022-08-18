@@ -6,11 +6,7 @@
     :style="style"
   >
     <slot></slot>
-    <magic-ui-component
-      v-for="item in config.items"
-      :key="item.id"
-      :config="item"
-    ></magic-ui-component>
+    <magic-ui-component v-for="item in config.items" :key="item.id" :config="item"></magic-ui-component>
   </div>
 </template>
 
@@ -24,7 +20,7 @@ import useApp from '../../useApp';
 import useCommonMethod from '../../useCommonMethod';
 
 export default defineComponent({
-  name: 'MagicUiContainer',
+  name: 'magic-ui-container',
 
   components: {
     'magic-ui-component': Component,

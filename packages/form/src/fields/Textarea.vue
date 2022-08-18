@@ -19,7 +19,7 @@ import { FormState, TextareaConfig } from '../schema';
 import fieldProps from '../utils/fieldProps';
 import { useAddField } from '../utils/useAddField';
 export default defineComponent({
-  name: 'MFieldsTextarea',
+  name: 'm-fields-textarea',
 
   props: {
     ...fieldProps,

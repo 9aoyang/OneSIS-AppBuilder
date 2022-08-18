@@ -22,7 +22,7 @@ import { FormState, NumberConfig } from '../schema';
 import fieldProps from '../utils/fieldProps';
 import { useAddField } from '../utils/useAddField';
 export default defineComponent({
-  name: 'MFieldsNumber',
+  name: 'm-fields-number',
 
   props: {
     ...fieldProps,

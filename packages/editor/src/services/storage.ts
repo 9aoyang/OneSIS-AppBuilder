@@ -57,7 +57,7 @@ export class WebStorage extends BaseService {
   public async getItem(key: string, options: Options = {}): Promise<any> {
     const [storage, namespace] = await Promise.all([this.getStorage(), this.getNamespace()]);
     const { protocol = options.protocol, item } = this.getValueAndProtocol(
-      storage.getItem(`${options.namespace || namespace}:${key}`)
+      storage.getItem(`${options.namespace || namespace}:${key}`),
     );
 
     if (item === null) return null;
@@ -117,13 +117,10 @@ export class WebStorage extends BaseService {
       };
     }
 
-    const item = value.replace(
-      new RegExp(`^(${Object.values(Protocol).join('|')})(:)(.+)`),
-      (_$0, $1, _$2, $3) => {
-        protocol = $1;
-        return $3;
-      }
-    );
+    const item = value.replace(new RegExp(`^(${Object.values(Protocol).join('|')})(:)(.+)`), (_$0, $1, _$2, $3) => {
+      protocol = $1;
+      return $3;
+    });
 
     return {
       protocol,

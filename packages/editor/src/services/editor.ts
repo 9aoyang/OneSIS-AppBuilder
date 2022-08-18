@@ -63,7 +63,7 @@ class Editor extends BaseService {
         'highlight',
       ],
       // 需要注意循环依赖问题，如果函数间有相互调用的话，不能设置为串行调用
-      ['select', 'update', 'moveLayer'],
+      ['select', 'update', 'moveLayer']
     );
   }
 
@@ -309,11 +309,11 @@ class Editor extends BaseService {
    * @param parent 要添加到的容器组件节点配置，如果不设置，默认为当前选中的组件的父节点
    * @returns 添加后的节点
    */
-  public async add(addNode: AddMNode | MNode[], parent?: MContainer | null): Promise<MNode | MNode[]> {
+  public async add(
+    addNode: AddMNode | MNode[],
+    parent?: MContainer | null
+  ): Promise<MNode | MNode[]> {
     const stage = this.get<StageCore | null>('stage');
-
-    const parentNode = parent && typeof parent !== 'function' ? parent : getAddParent(addNode);
-    if (!parentNode) throw new Error('未找到父元素');
 
     // 新增多个组件只存在于粘贴多个组件,粘贴的是一个完整的config,所以不再需要getPropsValue
     const addNodes = [];
@@ -327,8 +327,13 @@ class Editor extends BaseService {
       addNodes.push(...addNode);
     }
 
-    const newNodes = await Promise.all(addNodes.map((node) => this.doAdd(node, parentNode)));
-
+    const newNodes = await Promise.all(
+      addNodes.map((node) => {
+        const parentNode = parent && typeof parent !== 'function' ? parent : getAddParent(node);
+        if (!parentNode) throw new Error('未找到父元素');
+        return this.doAdd(node, parentNode);
+      })
+    );
 
     if (newNodes.length > 1) {
       const newNodeIds = newNodes.map((node) => node.id);

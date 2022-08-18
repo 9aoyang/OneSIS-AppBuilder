@@ -3,11 +3,11 @@
     <slot name="layer-panel-header"></slot>
 
     <el-input
-      v-model="filterText"
       class="filterInput"
       size="small"
       placeholder="输入关键字进行过滤"
       clearable
+      v-model="filterText"
       @change="filterTextChangeHandler"
     ></el-input>
 
@@ -26,19 +26,19 @@
       }"
       :filter-node-method="filterNode"
       :allow-drop="allowDrop"
-      empty-text="页面空荡荡的"
       @node-click="clickHandler"
       @node-contextmenu="contextmenu"
       @node-drag-end="handleDragEnd"
+      empty-text="页面空荡荡的"
     >
       <template #default="{ node, data }">
         <div
           :id="data.id"
           class="cus-tree-node"
-          :class="{ 'cus-tree-node-hover': canHighlight && data.id === highlightNode?.id }"
           @mousedown="toggleClickFlag"
           @mouseup="toggleClickFlag"
           @mouseenter="highlightHandler(data)"
+          :class="{ 'cus-tree-node-hover': canHighlight && data.id === highlightNode?.id }"
         >
           <slot name="layer-node-content" :node="node" :data="data">
             <span>
@@ -89,10 +89,7 @@ const highlight = (data: MNode, editorService?: EditorService) => {
   editorService?.get<StageCore>('stage')?.highlight(data.id);
 };
 
-const useDrop = (
-  tree: Ref<InstanceType<typeof ElTree> | undefined>,
-  editorService?: EditorService
-) => ({
+const useDrop = (tree: Ref<InstanceType<typeof ElTree> | undefined>, editorService?: EditorService) => ({
   allowDrop: (draggingNode: any, dropNode: any, type: string): boolean => {
     const { data } = dropNode || {};
     const { data: ingData } = draggingNode;
@@ -124,10 +121,7 @@ const useDrop = (
   },
 });
 
-const useStatus = (
-  tree: Ref<InstanceType<typeof ElTree> | undefined>,
-  editorService?: EditorService
-) => {
+const useStatus = (tree: Ref<InstanceType<typeof ElTree> | undefined>, editorService?: EditorService) => {
   const highlightNode = ref<MNode>();
   const node = ref<MNode>();
   const page = computed(() => editorService?.get('page'));
@@ -187,7 +181,7 @@ const useFilter = (tree: Ref<InstanceType<typeof ElTree> | undefined>) => ({
 });
 
 export default defineComponent({
-  name: 'MagicEditorLayerPanel',
+  name: 'magic-editor-layer-panel',
 
   components: { LayerMenu },
 
@@ -207,7 +201,7 @@ export default defineComponent({
 
     const statusData = useStatus(tree, editorService);
     const canHighlight = computed(
-      () => statusData.highlightNode.value?.id !== statusData.clickNode.value?.id && !clicked.value
+      () => statusData.highlightNode.value?.id !== statusData.clickNode.value?.id && !clicked.value,
     );
 
     editorService?.on('remove', () => {

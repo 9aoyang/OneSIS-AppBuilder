@@ -7,7 +7,7 @@ import { defineComponent } from 'vue';
 import useApp from '../../useApp';
 
 export default defineComponent({
-  name: 'MagicUiImg',
+  name: 'magic-ui-img',
   props: {
     config: {
       type: Object,

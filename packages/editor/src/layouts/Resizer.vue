@@ -11,7 +11,7 @@ import Gesto from 'gesto';
 import { Services } from '../type';
 
 export default defineComponent({
-  name: 'MEditorResize',
+  name: 'm-editor-resize',
 
   props: {
     type: {

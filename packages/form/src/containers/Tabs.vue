@@ -76,7 +76,7 @@ const tabClickHandler = (mForm: FormState | undefined, tab: any, props: any) => 
 };
 
 const Tab = defineComponent({
-  name: 'MFormTab',
+  name: 'm-form-tab',
 
   props: {
     labelWidth: String,
@@ -172,10 +172,7 @@ const Tab = defineComponent({
           props.model[props.config.name].splice(+tabName, 1);
 
           // 防止删除后没有选中的问题
-          if (
-            tabName < activeTabName.value ||
-            activeTabName.value >= props.model[props.config.name].length
-          ) {
+          if (tabName < activeTabName.value || activeTabName.value >= props.model[props.config.name].length) {
             activeTabName.value = (+activeTabName.value - 1).toString();
             tabClickHandler(mForm, { name: activeTabName.value }, props);
           }
@@ -189,11 +186,7 @@ const Tab = defineComponent({
       changeHandler: () => {
         emit('change', props.model);
         if (typeof props.config.onChange === 'function') {
-          props.config.onChange(mForm, {
-            model: props.model,
-            prop: props.prop,
-            config: props.config,
-          });
+          props.config.onChange(mForm, { model: props.model, prop: props.prop, config: props.config });
         }
       },
     };

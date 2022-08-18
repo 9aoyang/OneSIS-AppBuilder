@@ -1,13 +1,13 @@
 <template>
   <div class="m-fields-group-list">
-    <div v-if="config.extra" style="color: rgba(0, 0, 0, 0.45)" v-html="config.extra"></div>
+    <div v-if="config.extra" v-html="config.extra" style="color: rgba(0, 0, 0, 0.45)"></div>
     <div v-if="!model[name] || !model[name].length" class="el-table__empty-block">
       <span class="el-table__empty-text">暂无数据</span>
     </div>
 
     <m-fields-group-list-item
-      v-for="(item, index) in model[name]"
       v-else
+      v-for="(item, index) in model[name]"
       :key="index"
       :model="item"
       :config="config"
@@ -21,9 +21,9 @@
       @change="changeHandler"
     ></m-fields-group-list-item>
 
-    <el-button v-if="addable" size="small" @click="addHandler">添加组</el-button>
+    <el-button @click="addHandler" size="small" v-if="addable">添加组</el-button>
 
-    <el-button v-if="config.enableToggleMode" icon="el-icon-s-grid" size="small" @click="toggleMode"
+    <el-button icon="el-icon-s-grid" size="small" @click="toggleMode" v-if="config.enableToggleMode"
       >切换为表格</el-button
     >
   </div>
@@ -38,7 +38,7 @@ import { initValue } from '../utils/form';
 import MFieldsGroupListItem from './GroupListItem.vue';
 
 export default defineComponent({
-  name: 'MFormGroupList',
+  name: 'm-form-group-list',
 
   components: { MFieldsGroupListItem },
 
