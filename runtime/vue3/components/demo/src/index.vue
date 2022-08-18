@@ -1,13 +1,14 @@
 <template>
-  <div @click="onClick">{{ config.text }}</div>
+  <div>
+    <span>this is a Demo component:</span>
+    <span :style="{ color: config.color }">{{ config.text }}</span>
+  </div>
 </template>
-<script lang="ts">
-import { defineComponent } from 'vue';
 
-import useApp from '../../useApp';
-
-export default defineComponent({
+<script>
+export default {
   name: 'MagicUiDemo',
+
   props: {
     config: {
       type: Object,
@@ -15,14 +16,6 @@ export default defineComponent({
     },
   },
 
-  setup(props) {
-    useApp(props);
-
-    return {
-      onClick() {
-        console.log('click');
-      },
-    };
-  },
-});
+  setup() {},
+};
 </script>
