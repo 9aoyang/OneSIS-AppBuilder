@@ -8,7 +8,7 @@
   },
   "scripts": {
     "bootstrap": "pnpm i && pnpm build",
-    "docs": "pnpm --filter \"docs\" dev",
+    "doc": "pnpm --filter \"docs\" dev",
     "build:docs": "pnpm --filter \"docs\" build",
     "reinstall": "pnpm clean:all && pnpm i",
     "prepare": "husky install",
