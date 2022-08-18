@@ -1,7 +1,7 @@
-import Button from './button';
+import Demo from './demo';
 
 const ui: Record<string, any> = {
-  demo: Button,
+  demo: Demo,
 };
 
 export default ui;
