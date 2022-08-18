@@ -1,6 +1,6 @@
-import Demo from './Demo';
+import Demo from './src/Demo';
 
-export { default as config } from './formConfig';
-export { default as value } from './initValue';
+export { default as config } from './src/formConfig';
+export { default as value } from './src/initValue';
 
 export default Demo;
