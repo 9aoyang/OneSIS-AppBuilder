@@ -17,5 +17,5 @@ export declare const getPositionInContainer: (position: PastePosition | undefine
     left: number;
     top: number;
 };
-export declare const getAddParent: (addNode: AddMNode | MNode[]) => MContainer | undefined;
+export declare const getAddParent: (node: MNode) => MContainer | undefined;
 export declare const getDefaultConfig: (addNode: AddMNode, parentNode: MContainer) => Promise<any>;
