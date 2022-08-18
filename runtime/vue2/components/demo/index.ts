@@ -1,6 +1,6 @@
-import Demo from './Demo.vue';
+import Demo from './src/index.vue';
 
-export { default as config } from './formConfig';
-export { default as value } from './initValue';
+export { default as config } from './src/formConfig';
+export { default as value } from './src/initValue';
 
 export default Demo;

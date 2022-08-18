@@ -26,6 +26,9 @@ export default defineComponent({
   },
 
   setup(props) {
+    console.log('====================================');
+    console.log(props.config.props);
+    console.log('====================================');
     const vm = getCurrentInstance()?.proxy;
     const app: Core | undefined = inject('app');
 
