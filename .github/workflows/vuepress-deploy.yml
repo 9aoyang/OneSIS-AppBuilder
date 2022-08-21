@@ -28,9 +28,6 @@ jobs:
       - name: Build VuePress site
         run: pnpm db
 
-      - name: Push
-        run: sh test.sh
-
       - name: clean dist
         run: rm -rf dist
 
