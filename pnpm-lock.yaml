@@ -51,12 +51,14 @@ importers:
       '@vuepress/client': ^2.0.0-beta.42
       '@vuepress/plugin-search': 2.0.0-beta.49
       '@vuepress/theme-default': 2.0.0-beta.49
+      vite: ~2.9.14
       vue: ^3.2.36
       vuepress: 2.0.0-beta.49
     devDependencies:
       '@vuepress/client': 2.0.0-beta.49
       '@vuepress/plugin-search': 2.0.0-beta.49
       '@vuepress/theme-default': 2.0.0-beta.49
+      vite: 2.9.15
       vue: 3.2.37
       vuepress: 2.0.0-beta.49_2swkti5cn42xfigpmsn6ifcgpu
 
