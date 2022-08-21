@@ -35,7 +35,7 @@ jobs:
         run: mkdir dist && mkdir dist/docs
 
       - name: move to dist
-        run: mv docs/dist/* dist/docs
+        run: mv docs/src/.vuepress/dist/* dist/docs
 
       - name: Deploy to GitHub Pages
         uses: crazy-max/ghaction-github-pages@v2
