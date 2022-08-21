@@ -95,6 +95,11 @@ const menu: MenuBarData = {
       text: 'Table Playground',
       handler: () => router.push('table'),
     },
+    {
+      type: 'button',
+      text: '工作流引擎',
+      handler: () => router.push('bpmn'),
+    },
     '/',
     {
       type: 'button',

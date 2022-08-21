@@ -12,6 +12,11 @@ const listMap = {
           text: 'Demo',
           type: 'demo',
         },
+        {
+          icon: Watermelon,
+          text: '流程Viewer',
+          type: 'bpmnviewer',
+        },
       ],
     },
   ],
