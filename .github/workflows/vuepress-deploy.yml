@@ -23,6 +23,8 @@ jobs:
           node-version: 16
           cache: 'pnpm'
 
+      - run: pnpm i
+
       - name: Build VuePress site
         run: pnpm db
 
