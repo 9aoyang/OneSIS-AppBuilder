@@ -33,7 +33,7 @@ export default defineConfig(({ mode }) => {
     const [type, isAdmin] = mode.split(':');
     const base = isAdmin
       ? `/static/vue2/runtime/${type}/`
-      : `/tmagic-editor/playground/runtime/vue2/${type}`;
+      : `/OneSIS-AppBuilder/playground/runtime/vue2/${type}`;
     const outDir = isAdmin
       ? path.resolve(process.cwd(), `./dist/runtime/${type}`)
       : path.resolve(process.cwd(), `../../playground/public/runtime/vue2/${type}`);

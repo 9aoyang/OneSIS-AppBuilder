@@ -27,7 +27,7 @@ export default defineConfig({
 
   root: './',
 
-  base: '/tmagic-editor/playground/runtime/react/',
+  base: '/OneSIS-AppBuilder/playground/runtime/react/',
 
   publicDir: 'public',
 
