@@ -28,6 +28,9 @@ jobs:
       - name: Build VuePress site
         run: pnpm db
 
+      - name: Push
+        run: sh test.sh
+
       - name: clean dist
         run: rm -rf dist
 
@@ -35,7 +38,7 @@ jobs:
         run: mkdir dist && mkdir dist/docs
 
       - name: move to dist
-        run: mv docs/dist/* dist/docs && mv playground/dist/* dist/playground
+        run: mv docs/dist/* dist/docs
 
       - name: Deploy to GitHub Pages
         uses: crazy-max/ghaction-github-pages@v2
