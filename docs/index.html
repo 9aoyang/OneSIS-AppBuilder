@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <meta name="generator" content="VuePress 2.0.0-beta.49">
+    <style>
+      :root {
+        --c-bg: #fff;
+      }
+      html.dark {
+        --c-bg: #22272e;
+      }
+      html, body {
+        background-color: var(--c-bg);
+      }
+    </style>
+    <script>
+      const userMode = localStorage.getItem('vuepress-color-scheme');
+			const systemDarkMode = window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches;
+			if (userMode === 'dark' || (userMode !== 'light' && systemDarkMode)) {
+				document.documentElement.classList.toggle('dark', true);
+			}
+    </script>
+    <title>环境配置 | AppBuilder 组件规范</title><meta name="description" content="">
+    <link rel="modulepreload" href="/OneSIS-AppBuilder/assets/app.fa5c7847.js"><link rel="modulepreload" href="/OneSIS-AppBuilder/assets/index.html.43407379.js"><link rel="modulepreload" href="/OneSIS-AppBuilder/assets/index.html.da13c16f.js"><link rel="prefetch" href="/OneSIS-AppBuilder/assets/404.html.b4c6daf6.js"><link rel="prefetch" href="/OneSIS-AppBuilder/assets/404.html.873a3f78.js"><link rel="prefetch" href="/OneSIS-AppBuilder/assets/404.0fc8eef8.js"><link rel="prefetch" href="/OneSIS-AppBuilder/assets/Layout.d8e2ba45.js">
+    <link rel="stylesheet" href="/OneSIS-AppBuilder/assets/style.d6a41b12.css">
+  </head>
+  <body>
+    <div id="app"><!--[--><div class="theme-container"><!--[--><header class="navbar"><div class="toggle-sidebar-button" title="toggle sidebar" aria-expanded="false" role="button" tabindex="0"><div class="icon" aria-hidden="true"><span></span><span></span><span></span></div></div><span><a aria-current="page" href="/OneSIS-AppBuilder/" class="router-link-active router-link-exact-active"><img class="logo" src="/OneSIS-AppBuilder/./favicon.png" alt="AppBuilder 组件规范"><span class="site-name can-hide">AppBuilder 组件规范</span></a></span><div class="navbar-items-wrapper" style=""><!--[--><!--]--><!----><!--[--><!--]--><button class="toggle-color-mode-button" title="toggle color mode"><svg style="" class="icon" focusable="false" viewBox="0 0 32 32"><path d="M16 12.005a4 4 0 1 1-4 4a4.005 4.005 0 0 1 4-4m0-2a6 6 0 1 0 6 6a6 6 0 0 0-6-6z" fill="currentColor"></path><path d="M5.394 6.813l1.414-1.415l3.506 3.506L8.9 10.318z" fill="currentColor"></path><path d="M2 15.005h5v2H2z" fill="currentColor"></path><path d="M5.394 25.197L8.9 21.691l1.414 1.415l-3.506 3.505z" fill="currentColor"></path><path d="M15 25.005h2v5h-2z" fill="currentColor"></path><path d="M21.687 23.106l1.414-1.415l3.506 3.506l-1.414 1.414z" fill="currentColor"></path><path d="M25 15.005h5v2h-5z" fill="currentColor"></path><path d="M21.687 8.904l3.506-3.506l1.414 1.415l-3.506 3.505z" fill="currentColor"></path><path d="M15 2.005h2v5h-2z" fill="currentColor"></path></svg><svg style="display:none;" class="icon" focusable="false" viewBox="0 0 32 32"><path d="M13.502 5.414a15.075 15.075 0 0 0 11.594 18.194a11.113 11.113 0 0 1-7.975 3.39c-.138 0-.278.005-.418 0a11.094 11.094 0 0 1-3.2-21.584M14.98 3a1.002 1.002 0 0 0-.175.016a13.096 13.096 0 0 0 1.825 25.981c.164.006.328 0 .49 0a13.072 13.072 0 0 0 10.703-5.555a1.01 1.01 0 0 0-.783-1.565A13.08 13.08 0 0 1 15.89 4.38A1.015 1.015 0 0 0 14.98 3z" fill="currentColor"></path></svg></button><form class="search-box" role="search"><input type="search" autocomplete="off" spellcheck="false" value><!----></form></div></header><!--]--><div class="sidebar-mask"></div><!--[--><aside class="sidebar"><!----><!--[--><!--]--><ul class="sidebar-items"><!--[--><li><p tabindex="0" class="sidebar-item sidebar-heading active">组件开发 <!----></p><ul style="" class="sidebar-item-children"><!--[--><li><a aria-current="page" href="/OneSIS-AppBuilder/" class="router-link-active router-link-exact-active sidebar-item active" aria-label="环境配置"><!--[--><!--]--> 环境配置 <!--[--><!--]--></a><ul style="" class="sidebar-item-children"><!--[--><li><a aria-current="page" href="/OneSIS-AppBuilder/#克隆项目" class="router-link-active router-link-exact-active sidebar-item" aria-label="克隆项目"><!--[--><!--]--> 克隆项目 <!--[--><!--]--></a><!----></li><li><a aria-current="page" href="/OneSIS-AppBuilder/#安装依赖" class="router-link-active router-link-exact-active sidebar-item" aria-label="安装依赖"><!--[--><!--]--> 安装依赖 <!--[--><!--]--></a><!----></li><li><a aria-current="page" href="/OneSIS-AppBuilder/#启动项目" class="router-link-active router-link-exact-active sidebar-item" aria-label="启动项目"><!--[--><!--]--> 启动项目 <!--[--><!--]--></a><!----></li><li><a aria-current="page" href="/OneSIS-AppBuilder/#组件开发" class="router-link-active router-link-exact-active sidebar-item" aria-label="组件开发"><!--[--><!--]--> 组件开发 <!--[--><!--]--></a><ul style="display:none;" class="sidebar-item-children"><!--[--><li><a aria-current="page" href="/OneSIS-AppBuilder/#_0-组件规范" class="router-link-active router-link-exact-active sidebar-item" aria-label="0.组件规范"><!--[--><!--]--> 0.组件规范 <!--[--><!--]--></a><!----></li><li><a aria-current="page" href="/OneSIS-AppBuilder/#_1-组件详解" class="router-link-active router-link-exact-active sidebar-item" aria-label="1.组件详解"><!--[--><!--]--> 1.组件详解 <!--[--><!--]--></a><!----></li><li><a aria-current="page" href="/OneSIS-AppBuilder/#_2-在-playground-中添加组件" class="router-link-active router-link-exact-active sidebar-item" aria-label="2.在 playground 中添加组件"><!--[--><!--]--> 2.在 playground 中添加组件 <!--[--><!--]--></a><!----></li><li><a aria-current="page" href="/OneSIS-AppBuilder/#_3-使用组件" class="router-link-active router-link-exact-active sidebar-item" aria-label="3.使用组件"><!--[--><!--]--> 3.使用组件 <!--[--><!--]--></a><!----></li><!--]--></ul></li><!--]--></ul></li><!--]--></ul></li><!--]--></ul><!--[--><!--]--></aside><!--]--><!--[--><main class="page"><!--[--><!--]--><div class="theme-default-content"><!--[--><!--]--><div><h1 id="环境配置" tabindex="-1"><a class="header-anchor" href="#环境配置" aria-hidden="true">#</a> 环境配置</h1><h2 id="克隆项目" tabindex="-1"><a class="header-anchor" href="#克隆项目" aria-hidden="true">#</a> 克隆项目</h2><div class="language-bash ext-sh line-numbers-mode"><pre class="language-bash"><code><span class="token function">git</span> clone https://github.com/9aoyang/OneSIS-AppBuilder.git
+</code></pre><div class="line-numbers" aria-hidden="true"><div class="line-number"></div></div></div><h2 id="安装依赖" tabindex="-1"><a class="header-anchor" href="#安装依赖" aria-hidden="true">#</a> 安装依赖</h2><p>项目使用 pnpm 作为包管理工具，如尚未安装，请参考<a href="https://pnpm.io/zh/installation" target="_blank" rel="noopener noreferrer">安装指南<span><svg class="external-link-icon" xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false" x="0px" y="0px" viewbox="0 0 100 100" width="15" height="15"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path><polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg><span class="external-link-icon-sr-only">open in new window</span></span></a></p><div class="language-bash ext-sh line-numbers-mode"><pre class="language-bash"><code><span class="token comment"># 进入项目根目录</span>
+<span class="token builtin class-name">cd</span> OneSIS-AppBuilder
+<span class="token function">pnpm</span> bootstrap
+</code></pre><div class="line-numbers" aria-hidden="true"><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div></div></div><h2 id="启动项目" tabindex="-1"><a class="header-anchor" href="#启动项目" aria-hidden="true">#</a> 启动项目</h2><p>项目中有 <code>playground</code> 和 <code>runtime</code> 两个文件夹, 启动 <code>playground</code> 时会自动加载 <code>runtime</code></p><div class="language-bash ext-sh line-numbers-mode"><pre class="language-bash"><code><span class="token comment"># 启动 Vue3 runtime</span>
+<span class="token function">pnpm</span> pg
+</code></pre><div class="line-numbers" aria-hidden="true"><div class="line-number"></div><div class="line-number"></div></div></div><p>如果上面的流程都 ok，应该已经看到 <code>playground</code> 在浏览器正常运行了：</p><img src="https://s1.ax1x.com/2022/08/18/vrmRGn.png" width="50%"><h2 id="组件开发" tabindex="-1"><a class="header-anchor" href="#组件开发" aria-hidden="true">#</a> 组件开发</h2><h3 id="_0-组件规范" tabindex="-1"><a class="header-anchor" href="#_0-组件规范" aria-hidden="true">#</a> 0.组件规范</h3><p>组件的基本目录结构如下图所示</p><div class="language-bash ext-sh line-numbers-mode"><pre class="language-bash"><code>runtime/
+│  vue3/
+│  ├─ components/
+│  │  ├─ demo/               组件名称
+│  │  │  ├─ src/
+│  │  │  │  ├─ formConfig.ts 表单配置描述
+│  │  │  │  ├─ index.vue     组件样式、逻辑代码
+│  │  │  │  ├─ initValue.ts  表单初始值
+│  │  │  ├─ index.ts 
+</code></pre><div class="line-numbers" aria-hidden="true"><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div></div></div><ul><li><code>runtime/vue3/components/demo</code></li></ul><p>目录下已经提供了一个示例组件，可以在开发时参考借鉴或直接使用。</p><h3 id="_1-组件详解" tabindex="-1"><a class="header-anchor" href="#_1-组件详解" aria-hidden="true">#</a> 1.组件详解</h3><ul><li><code>formConfig.ts</code></li></ul><div class="language-typescript ext-ts line-numbers-mode"><pre class="language-typescript"><code><span class="token comment">// formConfig.js</span>
+<span class="token keyword">export</span> <span class="token keyword">default</span> <span class="token punctuation">[</span>
+  <span class="token punctuation">{</span>
+    type<span class="token operator">:</span> <span class="token string">&#39;select&#39;</span><span class="token punctuation">,</span>
+    text<span class="token operator">:</span> <span class="token string">&#39;字体颜色&#39;</span><span class="token punctuation">,</span>
+    name<span class="token operator">:</span> <span class="token string">&#39;color&#39;</span><span class="token punctuation">,</span>
+    options<span class="token operator">:</span> <span class="token punctuation">[</span>
+      <span class="token punctuation">{</span>
+        text<span class="token operator">:</span> <span class="token string">&#39;红色字体&#39;</span><span class="token punctuation">,</span>
+        value<span class="token operator">:</span> <span class="token string">&#39;red&#39;</span><span class="token punctuation">,</span>
+      <span class="token punctuation">}</span><span class="token punctuation">,</span>
+      <span class="token punctuation">{</span>
+        text<span class="token operator">:</span> <span class="token string">&#39;蓝色字体&#39;</span><span class="token punctuation">,</span>
+        value<span class="token operator">:</span> <span class="token string">&#39;blue&#39;</span><span class="token punctuation">,</span>
+      <span class="token punctuation">}</span><span class="token punctuation">,</span>
+    <span class="token punctuation">]</span><span class="token punctuation">,</span>
+  <span class="token punctuation">}</span><span class="token punctuation">,</span>
+  <span class="token punctuation">{</span>
+    name<span class="token operator">:</span> <span class="token string">&#39;text&#39;</span><span class="token punctuation">,</span>
+    text<span class="token operator">:</span> <span class="token string">&#39;配置文案&#39;</span><span class="token punctuation">,</span>
+  <span class="token punctuation">}</span><span class="token punctuation">,</span>
+<span class="token punctuation">]</span><span class="token punctuation">;</span>
+
+</code></pre><div class="line-numbers" aria-hidden="true"><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div></div></div><p>这里一共提供了两个组件的配置项：字体颜色<code>color</code>, 配置文案<code>text</code>，选中组件时，最终会渲染到表单配置中，用于提供修改组件行为的配置项。如下图红框中的部分：</p><img src="https://s1.ax1x.com/2022/08/18/vrMGQI.png" width="50%"><ul><li><code>initValue.ts</code></li></ul><div class="language-typescript ext-ts line-numbers-mode"><pre class="language-typescript"><code><span class="token comment">// initValue.js</span>
+<span class="token keyword">export</span> <span class="token keyword">default</span> <span class="token punctuation">{</span>
+  color<span class="token operator">:</span> <span class="token string">&#39;red&#39;</span><span class="token punctuation">,</span>
+  text<span class="token operator">:</span> <span class="token string">&#39;一段文字&#39;</span><span class="token punctuation">,</span>
+<span class="token punctuation">}</span><span class="token punctuation">;</span>
+
+</code></pre><div class="line-numbers" aria-hidden="true"><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div></div></div><p>这里就是配置组件的初始值，如上图所示“一段文字”这几个字的默认颜色为红色</p><ul><li><code>index.vue</code></li></ul><div class="language-vue ext-vue line-numbers-mode"><pre class="language-vue"><code><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>template</span><span class="token punctuation">&gt;</span></span>
+  <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>div</span><span class="token punctuation">&gt;</span></span>
+    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>span</span><span class="token punctuation">&gt;</span></span>this is a Demo component:<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>span</span><span class="token punctuation">&gt;</span></span>
+    <span class="token comment">&lt;!-- 这里的 `config.color` 和 `config.text` 
+    就是对应 `formConfig.js` 里的 `color` 和 `text`，
+    组件任意想配置的部分都可以通过这种方式来实现 --&gt;</span>
+    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>span</span> <span class="token attr-name">:style</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">&quot;</span>{ color: config.color }<span class="token punctuation">&quot;</span></span><span class="token punctuation">&gt;</span></span>{{ config.text }}<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>span</span><span class="token punctuation">&gt;</span></span>
+  <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>div</span><span class="token punctuation">&gt;</span></span>
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>template</span><span class="token punctuation">&gt;</span></span>
+
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>script</span><span class="token punctuation">&gt;</span></span><span class="token script"><span class="token language-javascript">
+<span class="token keyword">export</span> <span class="token keyword">default</span> <span class="token punctuation">{</span>
+  <span class="token literal-property property">props</span><span class="token operator">:</span> <span class="token punctuation">{</span>
+    <span class="token literal-property property">config</span><span class="token operator">:</span> <span class="token punctuation">{</span>
+      <span class="token literal-property property">type</span><span class="token operator">:</span> Object<span class="token punctuation">,</span>
+      <span class="token function-variable function">default</span><span class="token operator">:</span> <span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token operator">=&gt;</span> <span class="token punctuation">(</span><span class="token punctuation">{</span><span class="token punctuation">}</span><span class="token punctuation">)</span><span class="token punctuation">,</span>
+    <span class="token punctuation">}</span><span class="token punctuation">,</span>
+  <span class="token punctuation">}</span><span class="token punctuation">,</span>
+
+  <span class="token function">setup</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span><span class="token punctuation">}</span><span class="token punctuation">,</span>
+<span class="token punctuation">}</span><span class="token punctuation">;</span>
+</span></span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>script</span><span class="token punctuation">&gt;</span></span>
+
+</code></pre><div class="line-numbers" aria-hidden="true"><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div></div></div><ul><li><code>runtime/vue3/components/demo/index.ts</code></li></ul><div class="language-typescript ext-ts line-numbers-mode"><pre class="language-typescript"><code><span class="token keyword">import</span> Demo <span class="token keyword">from</span> <span class="token string">&#39;./src/index.vue&#39;</span><span class="token punctuation">;</span>
+
+<span class="token keyword">export</span> <span class="token punctuation">{</span> <span class="token keyword">default</span> <span class="token keyword">as</span> config <span class="token punctuation">}</span> <span class="token keyword">from</span> <span class="token string">&#39;./src/formConfig&#39;</span><span class="token punctuation">;</span>
+<span class="token keyword">export</span> <span class="token punctuation">{</span> <span class="token keyword">default</span> <span class="token keyword">as</span> value <span class="token punctuation">}</span> <span class="token keyword">from</span> <span class="token string">&#39;./src/initValue&#39;</span><span class="token punctuation">;</span>
+
+<span class="token keyword">export</span> <span class="token keyword">default</span> Demo<span class="token punctuation">;</span>
+
+</code></pre><div class="line-numbers" aria-hidden="true"><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div></div></div><p>通过 <code>index.ts</code> 导出 <code>Demo</code> 组件</p><ul><li><code>runtime/vue3/components/index.ts</code></li></ul><div class="language-typescript ext-ts line-numbers-mode"><pre class="language-typescript"><code><span class="token keyword">import</span> demo <span class="token keyword">from</span> <span class="token string">&#39;./demo&#39;</span><span class="token punctuation">;</span>
+
+<span class="token keyword">const</span> ui<span class="token operator">:</span> Record<span class="token operator">&lt;</span><span class="token builtin">string</span><span class="token punctuation">,</span> <span class="token builtin">any</span><span class="token operator">&gt;</span> <span class="token operator">=</span> <span class="token punctuation">{</span>
+  demo<span class="token operator">:</span> demo<span class="token punctuation">,</span>
+<span class="token punctuation">}</span><span class="token punctuation">;</span>
+
+<span class="token keyword">export</span> <span class="token keyword">default</span> ui<span class="token punctuation">;</span>
+</code></pre><div class="line-numbers" aria-hidden="true"><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div></div></div><p>这里导出 <code>components</code> 中的所有组件, 这里要注意对象中的 <code>key</code> 值要和 <code>playground/src/configs/componentGroupList.ts</code> 中组件的 <code>type</code> 一一对应，接下来会讲到</p><h3 id="_2-在-playground-中添加组件" tabindex="-1"><a class="header-anchor" href="#_2-在-playground-中添加组件" aria-hidden="true">#</a> 2.在 <code>playground</code> 中添加组件</h3><p>把新添加的组件添加到 <code>playground/src/configs/componentGroupList.ts</code> 中</p><img src="https://s1.ax1x.com/2022/08/21/vylGa6.png" width="50%"><p>添加到红框里的位置，其中：</p><ul><li><p><code>icon</code>： 可以使用 <a href="https://element-plus.org/zh-CN/component/icon.html" target="_blank" rel="noopener noreferrer">Element Plus 提供的 icon<span><svg class="external-link-icon" xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false" x="0px" y="0px" viewbox="0 0 100 100" width="15" height="15"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path><polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg><span class="external-link-icon-sr-only">open in new window</span></span></a>，或添加到项目资源后导入</p></li><li><p><code>text</code>：左侧组件列表展示的名称</p></li><li><p><code>type</code>：跟 <code>playground/src/configs/componentGroupList.ts</code> 中组件的 <code>type</code> 一一对应</p></li></ul><h3 id="_3-使用组件" tabindex="-1"><a class="header-anchor" href="#_3-使用组件" aria-hidden="true">#</a> 3.使用组件</h3><p>添加了新组件后，需要重新 build，然后运行项目后就可以正常使用了：</p><div class="language-bash ext-sh line-numbers-mode"><pre class="language-bash"><code><span class="token comment"># 重新 build</span>
+<span class="token function">pnpm</span> build:playground
+<span class="token comment"># 启动项目</span>
+<span class="token function">pnpm</span> pg
+</code></pre><div class="line-numbers" aria-hidden="true"><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div></div></div></div><!--[--><!--]--></div><footer class="page-meta"><!----><!----><!----></footer><!----><!--[--><!--]--></main><!--]--></div><!----><!--]--></div>
+    <script type="module" src="/OneSIS-AppBuilder/assets/app.fa5c7847.js" defer></script>
+  </body>
+</html>
