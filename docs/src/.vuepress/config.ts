@@ -15,7 +15,7 @@ export default defineUserConfig({
   lang: 'zh-CN',
   title: 'AppBuilder 组件规范',
   description: '',
-  base: '/OneSIS-AppBuilder/docs/',
+  base: '/OneSIS-AppBuilder/',
   theme: defaultTheme({
     logo: './favicon.png',
     docsDir: 'src',
