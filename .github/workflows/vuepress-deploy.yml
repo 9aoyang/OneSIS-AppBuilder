@@ -23,8 +23,6 @@ jobs:
           node-version: 16
           cache: 'pnpm'
 
-      - run: pnpm bootstrap
-
       - name: Build VuePress site
         run: pnpm db
 
