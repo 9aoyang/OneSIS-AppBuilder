@@ -1,4 +1,4 @@
-import { Watermelon, Chicken, Sugar } from '@element-plus/icons-vue';
+import { Watermelon } from '@element-plus/icons-vue';
 
 const { VITE_RUNTIME_TYPE } = import.meta.env;
 
@@ -9,32 +9,6 @@ const listMap = {
       items: [
         {
           icon: Watermelon,
-          text: 'Demo',
-          type: 'demo',
-        },
-      ],
-    },
-  ],
-
-  vue2: [
-    {
-      title: 'Vue2 组件',
-      items: [
-        {
-          icon: Chicken,
-          text: 'Demo',
-          type: 'demo',
-        },
-      ],
-    },
-  ],
-
-  react: [
-    {
-      title: 'React',
-      items: [
-        {
-          icon: Sugar,
           text: 'Demo',
           type: 'demo',
         },
