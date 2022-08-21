@@ -28,5 +28,4 @@ export default defineUserConfig({
   }),
 
   plugins: [searchPlugin()],
-  dest: 'public',
 });
