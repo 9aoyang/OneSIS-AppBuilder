@@ -16,8 +16,6 @@ import Core from '@tmagic/core';
 import { toLine } from '@tmagic/utils';
 
 export default defineComponent({
-  name: 'magic-ui-component',
-
   props: {
     config: {
       type: Object,
@@ -26,9 +24,6 @@ export default defineComponent({
   },
 
   setup(props) {
-    console.log('====================================');
-    console.log(props.config.props);
-    console.log('====================================');
     const vm = getCurrentInstance()?.proxy;
     const app: Core | undefined = inject('app');
 

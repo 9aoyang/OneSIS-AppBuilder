@@ -26,7 +26,7 @@ export default defineConfig({
 
   root: './',
 
-  base: '/tmagic-editor/playground/runtime/vue2/',
+  base: '/OneSIS-AppBuilder/playground/runtime/vue2/',
 
   publicDir: 'public',
 

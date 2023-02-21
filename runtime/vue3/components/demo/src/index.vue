@@ -7,8 +7,6 @@
 
 <script>
 export default {
-  name: 'MagicUiDemo',
-
   props: {
     config: {
       type: Object,

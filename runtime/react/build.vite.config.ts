@@ -31,7 +31,7 @@ export default defineConfig(({ mode }) => {
     const [type, isAdmin] = mode.split(':');
     const base = isAdmin
       ? `/static/react/runtime/${type}/`
-      : `/tmagic-editor/playground/runtime/react/${type}`;
+      : `/OneSIS-AppBuilder/playground/runtime/react/${type}`;
     const outDir = isAdmin
       ? path.resolve(process.cwd(), `./dist/runtime/${type}`)
       : path.resolve(process.cwd(), `../../playground/public/runtime/react/${type}`);

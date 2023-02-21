@@ -15,7 +15,7 @@ export default defineConfig({
     }),
   ],
 
-  base: '/tmagic-editor/playground',
+  base: '/OneSIS-AppBuilder/playground/',
 
   resolve: {
     alias: [
@@ -69,13 +69,13 @@ export default defineConfig({
     host: '0.0.0.0',
     port: 8098,
     proxy: {
-      '^/tmagic-editor/playground/runtime': {
+      '^/OneSIS-AppBuilder/playground/runtime': {
         target: 'http://127.0.0.1:8078',
         changeOrigin: true,
         prependPath: false,
       },
     },
-    open: '/tmagic-editor/playground/',
+    open: '/OneSIS-AppBuilder/playground/',
   },
 
   build: {

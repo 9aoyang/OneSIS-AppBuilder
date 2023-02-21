@@ -1,5 +1,5 @@
 import { Ref } from 'vue';
-import type { MNode } from '@tmagic/schema';
+import type { Id, MNode } from '@tmagic/schema';
 declare const _default: import("vue").DefineComponent<{}, {
     highlightHandler: import("lodash-es").DebouncedFunc<(data: MNode) => void>;
     toggleClickFlag: () => void;
@@ -13,9 +13,11 @@ declare const _default: import("vue").DefineComponent<{}, {
     handleDragEnd(e: any): Promise<void>;
     values: import("vue").ComputedRef<MNode[]>;
     loadItems: (node: any, resolve: Function) => any;
-    highlightNode: Ref<MNode | undefined>;
+    highlightNode: import("vue").ComputedRef<MNode | undefined>;
     clickNode: Ref<MNode | undefined>;
-    expandedKeys: import("vue").ComputedRef<import("@tmagic/schema").Id[]>;
+    expandedKeys: import("vue").ComputedRef<Id[]>;
+    handleCollapse: (data: MNode) => void;
+    handleExpand: (data: MNode) => void;
     tree: Ref<({
         $: import("vue").ComponentInternalInstance;
         $data: {};
