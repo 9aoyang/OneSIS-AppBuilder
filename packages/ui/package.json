@@ -14,6 +14,7 @@
     "@tmagic/core": "1.1.0-beta.11",
     "@tmagic/schema": "1.1.0-beta.11",
     "@tmagic/utils": "1.1.0-beta.11",
+    "bpmn-js": "^9.3.2",
     "delegate": "^3.2.0",
     "qrcode": "^1.5.0",
     "tiny-emitter": "^2.1.0",
